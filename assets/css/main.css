@@ -40,6 +40,10 @@ hr.sm {
     margin: 20px auto;
 }
 
+.caps {
+    text-transform: uppercase; 
+}
+
 #container {
     width: 1024px;
     margin: 0 auto;
@@ -88,6 +92,7 @@ blockquote {
     line-height: 22px;
     border-left: 4px solid #3f3d4e;
     margin-left: 20px;
+    font-weight: bold;
 }
 
 blockquote p {
