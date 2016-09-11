@@ -683,9 +683,13 @@ header {
     overflow: hidden;
 }
 
-.events p {
+.details {
     display: inline-block;
     vertical-align: middle;
+}
+
+.events p {
+    display: block;
     margin: 0 10px 0;
     opacity: 0;
     transform: translateX(-20px);
@@ -693,13 +697,16 @@ header {
     overflow: hidden;
 }
 
+.eventDate {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 0!important;
+}
+
 .events img.is-showing, .events p.is-showing {
     opacity: 1;
     transform: translateX(0px);
-}
-
-.events a {
-    color: #7a98a7;
 }
 
 /* . Comments */
