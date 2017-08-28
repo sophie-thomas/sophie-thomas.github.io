@@ -129,6 +129,11 @@ p {
 	margin-top: 50px
 }
 
+.element, .typed-cursor {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
