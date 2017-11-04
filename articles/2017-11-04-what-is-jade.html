@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>What is Jade and why did I use it to code my website?: The Portfolio of Sophie Thomas</title>
+    <!--head.jade-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sophie Thomas">
+    <meta name="description" content="Sophie Thomas is a Web Technologies student at Huddersfield University who has a passion for Web Design.">
+    <meta name="keywords" content="Web, Design, UI, UX, Web Design, Web Development">
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link href="http://sophiethomas.co.uk/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SophieThomas97">
+    <meta name="twitter:title" content="Sophie Thomas">
+    <meta name="twitter:description" content="Jade is a templating language that complies into HTML code. Jade allows you to code without the need of tags making coding quicker and cleaner. This is also helped through the features within the Jade language.">
+    <link rel="stylesheet" href="../assets/css/main.css" type="text/css">
+    <meta name="twitter:image" content="http://sophiethomas.co.uk/assets/images/author.jpg">
+  </head>
+  <body>
+    <div class="siteBorders"></div>
+    <div id="container">
+      <!--header.jade-->
+      <div id="header">
+        <div class="headerWrapper"><a href="http://sophiethomas.co.uk/">
+            <div class="profile col-6">
+              <div class="profileImg"><img src="http://sophiethomas.co.uk/assets/images/author.jpg" alt="me"></div>
+              <div class="profileText">
+                <p class="subTitle">the portfolio of</p>
+                <p class="mainTitle">sophie thomas</p>
+              </div>
+            </div></a>
+          <div class="socialIcons col-6"><a href="https://www.facebook.com/stwebportfolio/" target="_blank"><img src="http://sophiethomas.co.uk/assets/images/icons/facebook.png" alt="Facebook"></a><a href="https://twitter.com/stwebportfolio" target="_blank"><img src="http://sophiethomas.co.uk/assets/images/icons/twitter.png" alt="Twitter"></a><a href="https://www.linkedin.com/in/sophiethomasuk" target="_blank"><img src="http://sophiethomas.co.uk/assets/images/icons/linkedin.png" alt="Linkedin"></a></div>
+        </div>
+      </div>
+      <div class="col-12" id="articleList">
+        <div class="line">
+          <h1>What is Jade and why did I use it to code my website?</h1>
+        </div>
+        <p class="date"><em>Published: 4th November 2017</em></p>
+        <div class="articleContent">
+          <p>Jade is a templating language that complies into HTML code. Jade allows you to code without the need of tags making coding quicker and cleaner. This is also helped through the features within the Jade language.</p><img class="post-img-og" src="../assets/images/articles/2017/jade-code.jpg" alt="Jade Code">
+          <h5>A few features are:</h5>
+          <ul class="bullet">
+            <li>Block Expansion: allows you to nest tags on one line.</li>
+          </ul><code>div: p Hello world</code>
+          <ul class="bullet">
+            <li>Assignment: allows you to set a value to a variable.</li>
+          </ul><code>- var name = “sophie thomas”</code><br><code>p= name</code>
+          <ul class="bullet">
+            <li>Template Includes: allows you to separate the page into sections (called includes) and add them into pages</li>
+          </ul><code>// mainPage.jade</code><br><code>p Welcome to my website.</code><br><code>include about.jade</code><br><br><code>// about.jade</code><br><code>p Here is a little bit about me and what I do</code>
+          <p><em>For more documentation on .jade visit their website: <a class="link" href="http://learnjade.com/" target="_blank">http://learnjade.com/</a></em></p>
+          <h5>Why did I use it to code my website?</h5>
+          <p>For my latest portfolio website redesign I used Jade to code the website. The main reason to why I used Jade was because I wanted to make my website easier to edit in the future. By using the includes feature I was able to split the website up into sections and use them in the different pages of the website. Examples of these section were:</p>
+          <ul class="bullet">
+            <li>header</li>
+            <li>about</li>
+            <li>projects</li>
+            <li>articleslist</li>
+            <li>footer</li>
+          </ul>
+          <p>The reason to why this feature makes it easier to edit my website in the future is that if for example I just wanted to edit the social links in the header I’d only need to change the code in the header.jade file rather than having to edit the code in every file that it is used on.</p>
+          <p>I also used many of the other features that Jade provides which helped speed up the time it took to code the website.</p>
+          <p>Another reason to why I decided to use Jade was because of the hosting I use for my website. I host my website using <a class="link" href="https://pages.github.com/" target="_blank">Github Pages</a> which only allows for static websites. This means that server-side programming languages like PHP and C# can’t be uploaded. From what I’ve seen, Jade is most similar to PHP as it has many of the features PHP has such as includes and the use of variables. By using Jade, I can compile the .jade files into HTML using a compiler and upload my files to Github Pages whereas if I coded my website in PHP I’d have to change where I host my website.</p>
+          <p>After coding my website using Jade, which is the first time I’ve used Jade in a project, I really found coding in this language much cleaner and faster. I have also found that it is a lot easier to follow the code as there isn’t lots of tags getting in the way of the content.</p>
+        </div>
+        <div class="share">
+          <div class="line">
+            <h4>share this on</h4>
+          </div>
+          <div class="socialShare"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//sophiethomas.co.uk/articles/2017-09-23-what-is-jade.html" target="_blank"><img src="../assets/images/icons/facebook.png" alt="Share on Facebook"></a><a href="https://twitter.com/home?status=http%3A//sophiethomas.co.uk/articles/2017-09-23-what-is-jade.html%20via%20%40SophieThomas97" target="_blank"><img src="../assets/images/icons/twitter.png" alt="Share on Twitter"></a></div>
+        </div>
+      </div>
+      <!--footerrtn2.jade-->
+      <footer>
+        <div class="footerWrapper">
+          <div class="rtn"><a href="../articles.html"><img src="../assets/images/icons/arrow.png" alt="Return">
+              <h6>return to article list</h6></a></div>
+          <div class="copyright">
+            <p>2017 &copy; sophie thomas. all rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <!--scripts.jade-->
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/typed.js"></script>
+  <script src="assets/js/jribbble.min.js"></script>
+  <script src="assets/js/functions.js"></script>
+</html>
