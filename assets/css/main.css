@@ -508,11 +508,14 @@ footer p {
     .articles {padding-bottom: 50px;}
 }
 
+@media screen and (max-width: 400px) {
+    /* footer */
+    .menu {display: none;}
+}
+
 @media screen and (max-width: 350px) {
     /* links */
     .button:last-child {margin-left: 0px;}
     .button {display: block;}
-    
-    /* footer */
-    .menu {display: none;}
+}
     
