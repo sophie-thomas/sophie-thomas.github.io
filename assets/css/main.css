@@ -172,7 +172,7 @@ a {
     text-decoration: none;
 }
 
-a.link {
+a.link, a.fLink {
     font-family: 'Raleway', sans-serif;
     color: #e8f1f6;
     font-weight: bold;
@@ -202,7 +202,7 @@ a.newLink {
     margin: 5px 0;
 }
 
-a.link:hover, a.linkSm:hover, a.newLink:hover {
+a.link:hover, a.fLink:hover, a.linkSm:hover, a.newLink:hover {
     color: #30979b;
 }
 
@@ -320,7 +320,7 @@ a.completed {
 /* work */
 #work {
     max-width: 1024px;
-    margin: 0 auto; 
+    margin: 0 auto 100px; 
     overflow: hidden;
     float: none;
 }
@@ -422,12 +422,14 @@ footer {
 
 .footerWrapper {max-width: 1224px; margin: 0 auto;}
 
-.rtn {
+.rtn, .menu {
     margin: 8px 20px; 
     float: left;
 }
 
-.copyright {float: right;}
+.menu p {display: inline-block;}
+
+.copyright {float: right; margin: 10px 20px; }
 
 footer p {
     font-size: 12px;
