@@ -3,7 +3,7 @@
 //type text
 $(function(){
     $(".element").typed({
-	    strings: ["^1000creating awesome things^1000", "^1000writing articles^1000", "^1000producing videos^1000"],
+	    strings: ["^1000thinking^1000", "^1000creating^1000","^1000designing^1000","^1000prototyping^1000","^1000coding^1000"],
 	    // typing speed
         typeSpeed: 0,
         // loop
