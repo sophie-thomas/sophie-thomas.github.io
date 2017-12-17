@@ -447,7 +447,15 @@ footer p {
 /* media queries */
 @media screen and (max-width: 635px) {
     /* links */
-    .rtn, .copyright {
+    .copyright, .menu {
+        float: none;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    /* links */
+    .rtn, .copyright, .menu {
         float: none;
         text-align: center;
     }
@@ -504,4 +512,7 @@ footer p {
     /* links */
     .button:last-child {margin-left: 0px;}
     .button {display: block;}
+    
+    /* footer */
+    .menu {display: none;}
     
