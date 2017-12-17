@@ -164,6 +164,8 @@ p {
     border: 2px solid #fff;
 }
 
+.button:last-child {margin-left: 10px;}
+
 .button p {margin: 10px 20px;}
 
 a {
@@ -495,3 +497,9 @@ footer p {
     
     .articles {padding-bottom: 50px;}
 }
+
+@media screen and (max-width: 350px) {
+    /* links */
+    .button:last-child {margin-left: 0px;}
+    .button {display: block;}
+    
