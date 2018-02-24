@@ -121,7 +121,7 @@ h4 {
 }
 
 /* Links & Buttons */
-a {color: #000!important;}
+a {color: #212529!important;}
 a:hover, a.fLink:hover {
     text-decoration: none!important;
     color: #0b8b83!important;
@@ -143,19 +143,23 @@ a:hover, a.fLink:hover {
     position: relative;
     left: 0px;
     right:0px;
+    vertical-align: 
 }
 .button:hover .btnText {left: -6px;}
 .button:hover .iconArrow {left: 6px;}
 .button p {
     color: #fff; 
     padding: 5px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 a.fLink {
     font-family: 'Raleway', sans-serif;
     color: #e8f1f6;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
     color: #fff!important;
+    text-transform: uppercase;
 }
 
 /* Header */
