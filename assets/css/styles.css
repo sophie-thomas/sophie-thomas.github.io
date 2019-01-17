@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Reey';
+  src: url('assets/fonts/reey.otf') format('opentype');
+}
+h1 {font-family: 'Reey'}
