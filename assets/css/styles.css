@@ -1,5 +1,13 @@
 @font-face {
-  font-family: 'Reey';
-  src: url('assets/fonts/reey.otf') format('opentype');
+  font-family: 'Reey-Regular';
+  src: url('Reey-Regular.eot');
+  src: url('Reey-Regular.woff2') format('woff2'),
+       url('Reey-Regular.woff') format('woff'),
+       url('Reey-Regular.ttf') format('truetype'),
+       url('Reey-Regular.svg#Reey-Regular') format('svg'),
+       url('Reey-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
 }
-h1 {font-family: 'Reey'}
+
+h1 {font-family: 'Reey-Regular'}
