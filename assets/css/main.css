@@ -1,12 +1,7 @@
 /* FONTS */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 /* GRID */
-#container {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -32,18 +27,18 @@ body {
   margin: 0px;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 18px;
+  background-color: #E8EDEE;
   color: #4682B4;
   word-wrap: break-word;
 }
 
-.pageContent {
+#container  {
   position: fixed;
   width: 65%;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
 
@@ -51,7 +46,20 @@ body {
 
 /* TYPOGRAPHY */
 h1 {
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h1 span.name {
   font-size: 22px;
+  vertical-align: middle;
+}
+
+h1 span.role {
+  text-shadow: 2px 2px #ffffff;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 h2 {
@@ -63,6 +71,7 @@ h2 {
 p.animatedText {
   font-size: 22px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 footer p {
@@ -73,6 +82,15 @@ footer p {
 /* IMAGES */
 img {
   max-width: 100%;
+}
+
+.siteLogo {
+  width: 30px;
+  margin: 20px 0;
+}
+
+.profile {
+  margin: 15px 0;
 }
 
 .profile img {
@@ -93,11 +111,6 @@ img {
 }
 
 /* ANIMATED TEXT */
-.element, .typed-cursor {
-    white-space: nowrap;
-    overflow: hidden;
-}
-
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -124,7 +137,7 @@ img {
 /* BUTTONS */
 .workButtons {
   display: inline-block;
-  margin: 20px auto 10px;
+  margin: 10px auto;
 }
 
 .button {
@@ -145,4 +158,48 @@ img {
 a.button {
   color: #fff;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1258px) {
+  #container  {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .col-8 {
+    width: 100%;
+  }
+  
+  .col-4 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .col-4 {
+      width: 100%;
+  }
+
+  .workButtons {
+    width: 100%;
+  }
+  
+  .button {
+    display: block;
+    width: 100%;
+    margin: 5px 10px 5px 0;
+  }
+  
+  .button:first-child {
+    margin: 5px 10px 5px 0
+  }
+  
+  .socialIcons {
+      margin-bottom: 20px;
+  }
 }
