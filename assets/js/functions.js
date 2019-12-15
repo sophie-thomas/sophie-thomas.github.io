@@ -14,7 +14,7 @@ function setRandomPhoto() {
   let num = Math.floor(Math.random() * 6) + 1;
   document.getElementById (
     "profileImg"
-  ).src = `https://sophiethomas.co.uk/assets/images/sophie${num}.jpg`;
+  ).src = `/assets/images/sophie${num}.jpg`;
 }
 
 // ANIMATED TEXT
