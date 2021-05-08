@@ -53,13 +53,10 @@ h1 {
 
 h1 span.name {
   font-size: 22px;
-  vertical-align: middle;
 }
 
 h1 span.role {
   text-shadow: 2px 2px #ffffff;
-  text-transform: uppercase;
-  vertical-align: middle;
 }
 
 h2 {
@@ -99,6 +96,7 @@ img {
 
 .socialIcons {
   margin-top: 20px;
+  text-align: right;
 }
 
 .socialIcons img {
