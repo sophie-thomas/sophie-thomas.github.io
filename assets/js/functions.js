@@ -20,7 +20,7 @@ function setRandomPhoto() {
 // ANIMATED TEXT
 $(function(){
     $(".element").typed({
-	    strings: ["^2000designing and prototyping websites^2000", "^2000coding websites using HTML, CSS and JavaScript^2000", "^2000filming and editing videos^2000"],
+	    strings: ["^2000designing and prototyping websites^2000", "^2000coding websites^2000", "^2000filming and editing videos^2000"],
 	    // typing speed
         typeSpeed: 0,
         // loop
