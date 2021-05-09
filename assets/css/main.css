@@ -198,6 +198,9 @@ a.button {
   }
   
   .socialIcons {
-      margin-bottom: 20px;
+    margin-top: 0px;
+    display: block;
+    width: 100%;
+    text-align: left;
   }
 }
