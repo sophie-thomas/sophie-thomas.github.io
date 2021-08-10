@@ -5,18 +5,10 @@
 * {
     box-sizing: border-box;
 }
-
-.row::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
 [class*="col-"] {
 	float: left;
   padding: 0 20px;
 }
-
 .col-4{width:33.333333%;}
 .col-6 {width: 50%;}
 .col-8{width:66.666667%;}
@@ -30,18 +22,16 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
   background-color: #E8EDEE;
-  color: #4682B4;
+  color: #363839;
   word-wrap: break-word;
 }
-
 #container  {
   position: fixed;
-  width: 65%;
+  width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .clear {clear: both;}
 
 /* TYPOGRAPHY */
@@ -50,143 +40,77 @@ h1 {
   margin-top: 0;
   margin-bottom: 10px;
 }
-
 h1 span.name {
   font-size: 22px;
 }
-
 h1 span.role {
   text-shadow: 2px 2px #ffffff;
-}
-
-h2 {
-  font-size: 32px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-p.animatedText {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-footer p {
-  text-align: right;
-  font-size: 16px;
 }
 
 /* IMAGES */
 img {
   max-width: 100%;
 }
-
 .siteLogo {
   width: 30px;
   margin: 20px 0;
 }
-
 .profile {
-  margin: 15px 0;
+  margin-top: 120px;
 }
-
 .profile img {
   border-radius: 4px;
 }
-
 .socialIcons {
-  margin-top: 20px;
-  text-align: right;
+  margin-top: 40px;
 }
-
 .socialIcons img {
   width: 30px;
   margin: 0 10px 0 0;
 }
-
+.socialIcons img:hover, .socialIcons img:focus {
+  border: 2px solid #426d92;
+  border-radius: 50%;
+}
 .socialIcons img:first-child {
   margin: 0 10px 0 0;
-}
-
-/* ANIMATED TEXT */
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
 }
 
 /* BUTTONS */
 .workButtons {
   display: inline-block;
-  margin: 10px auto;
+  margin: 20px auto;
 }
-
 .button {
-  background-color: #4682B4;
+  border: 2px solid #363839;
   border-radius: 4px;
   padding: 10px;
   margin: 0 10px 0 0;
 }
-
 .button:first-child {
   margin: 0 10px 0 0;
 }
-
-.button:hover {
-  background-color: #255e8e;
+.button:hover, .button:focus {
+  border: 2px solid #426d92;
 }
-
 a.button {
-  color: #fff;
+  color: #363839;
   text-decoration: none;
 }
 
-@media screen and (max-width: 1258px) {
-  #container  {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transform: none;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
+@media screen and (max-width: 1070px) {
   .col-8 {
     width: 100%;
   }
-  
   .col-4 {
-    width: 50%;
+    display: none
   }
 }
 
-@media screen and (max-width: 544px) {
-  .col-4 {
-      width: 100%;
-  }
-
+@media screen and (max-width: 700px) {
   .workButtons {
     width: 100%;
   }
-  
   .button {
     display: block;
     width: 100%;
@@ -196,11 +120,21 @@ a.button {
   .button:first-child {
     margin: 5px 10px 5px 0
   }
-  
   .socialIcons {
     margin-top: 0px;
     display: block;
     width: 100%;
     text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #container {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 40px 0;
   }
 }
