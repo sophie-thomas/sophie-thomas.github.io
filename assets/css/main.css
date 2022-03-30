@@ -46,6 +46,13 @@ h1 span.name {
 h1 span.role {
   text-shadow: 2px 2px #ffffff;
 }
+a {
+  color: #363839;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
 
 /* IMAGES */
 img {
@@ -60,20 +67,6 @@ img {
 }
 .profile img {
   border-radius: 4px;
-}
-.socialIcons {
-  margin-top: 40px;
-}
-.socialIcons img {
-  width: 30px;
-  margin: 0 10px 0 0;
-}
-.socialIcons img:hover, .socialIcons img:focus {
-  border: 2px solid #426d92;
-  border-radius: 50%;
-}
-.socialIcons img:first-child {
-  margin: 0 10px 0 0;
 }
 
 /* BUTTONS */
