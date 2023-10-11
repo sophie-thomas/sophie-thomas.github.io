@@ -1,2 +1,2 @@
 # sophie-thomas.github.io
-The Portfolio of Sophie
+The Portfolio of Sophie Thomas
