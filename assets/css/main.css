@@ -53,6 +53,9 @@ a:hover {
 a:focus {
   border: 2px solid #426d92;
 }
+.socialLink {
+    margin: 10px 0;
+}
 
 @media screen and (max-width: 1070px) {
   .col-8 {
