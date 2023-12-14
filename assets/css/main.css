@@ -46,7 +46,6 @@ h1 span.name {
 a {
   color: #363839;
   text-decoration: underline;
-  display: block;
 }
 a:hover {
   text-decoration: none;
