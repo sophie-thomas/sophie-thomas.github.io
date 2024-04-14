@@ -1,0 +1,214 @@
+/*--- Fonts            -------*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*--- CSS Grid           -------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.grid-item {
+  padding: 0 10px 0 0;
+}
+.grid-item:has(hr) {
+  padding: 0;
+}
+
+/* Grid Col Spans */
+.span-2 { grid-column-end: span 2; }
+.span-3 { grid-column-end: span 3; }
+.span-4 { grid-column-end: span 4; }
+.span-5 { grid-column-end: span 5; }
+.span-6 { grid-column-end: span 6; }
+.span-7 { grid-column-end: span 7; }
+.span-8 { grid-column-end: span 8; }
+.span-9 { grid-column-end: span 9; }
+.span-10 { grid-column-end: span 10; }
+.span-11 { grid-column-end: span 11; }
+.span-12 { grid-column-end: span 12; }
+
+/* CSS Grid Media Queries */
+@media screen and (max-width: 991px) {
+  .grid-container { 
+    grid-template-columns: 1fr; 
+    gap: 0;
+  }
+  .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11 { grid-column-end: span 12; }
+  .offset { display: none; }
+}
+
+
+/*--- Base styles            -------*/
+body {
+  display: grid;
+  background-color: #fff;
+  color: #363839;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  word-spacing: 3.2px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+strong {
+  font-weight: bold;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+hr {
+  background-color: #363839;
+  border-radius: 10px;
+  margin: 0;
+  height: 12px;
+  border: 0;
+}
+
+/* Skip link for accessibility */
+#skiptocontent {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+.skip-link {
+  left: -9999px;
+  padding: 8px;
+  position: absolute;
+}
+.skip-link:active,
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+  background-color: #fff;
+  color: #363839;
+}
+
+/* Character styling */
+h1,h2,p {
+  margin: 0;
+}
+h1 {
+  font-size: 46px;
+  line-height: 69px;
+  word-spacing: 7.36px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 40px;
+  line-height: 60px;
+  word-spacing: 4.4px;
+  margin: 20px 0 10px;
+}
+p {
+  margin-bottom: 25px;
+}
+
+/* Links */
+a {
+  color: #363839;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  border: 2px solid #363839;
+  border-radius: 10px;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  background: inherit;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  word-spacing: 3.2px;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+}
+button:hover, button:focus {
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px #363839;
+}
+
+/*--- Base styles Media Queries            -------*/
+@media screen and (max-width: 991px) {
+  .align-right {
+    text-align: left;
+  }
+}
+
+/*--- Navigation            -------*/
+nav {
+  margin: 20px 0 40px;
+}
+/* Dropdown Toggle */
+.dropdown-toggle {
+  cursor: pointer;
+  width: 100%;
+  background-color: #373839;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: left;
+}
+.dropdown-content a {
+  margin-right: 10px;
+}
+
+/*--- Navigation Media Queries            -------*/
+@media screen and (max-width: 991px) {
+  nav .grid-container {
+    padding: 0 20px;
+  }
+  /* Dropdown Toggle */
+  .dropdown-content {
+    display: none;
+    padding: 10px 0 0 10px;
+  }
+  .dropdown-content a {
+    padding: 10px 0;
+  }
+}
+@media screen and (min-width: 991px) {
+  /* Hides dropdown button on larger screens */
+  .dropdown-toggle {
+    display: none;
+  }
+}
+
+/*--- Footer           -------*/
+footer {
+  margin-top: 40px;
+}
+
+/* Footer Media Queries*/
+@media screen and (max-width: 991px) {
+  footer {
+    margin-top: 20px;
+  }
+  footer hr {
+    margin-bottom: 10px;
+  }
+}
