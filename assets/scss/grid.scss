@@ -1,0 +1,94 @@
+/*--- CSS Grid           -------*/
+
+.grid-container-fluid, .grid-container {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: $gap;
+  padding: 10px 20px;
+
+  [class*="span-"] {
+    padding: 0 10px 0 0;
+  }
+
+  [class*="span-"]:has(hr) {
+    padding: 0;
+  }
+}
+.grid-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Defining columns spans and offsets */
+// Loop through all column spans and define the .grid-column-end number
+@for $span from 1 through $grid-columns {
+  .span-#{$span} {
+    grid-column-end: span $span;
+  }
+}
+// Loop through all column offsets and define the .grid-column-start number
+@for $offset from 0 through $grid-columns {
+  .offset-#{$offset} {
+    grid-column-start: $offset + 1;
+  }
+}
+// Defines media queries for each breakpoint and loops through both spans and offsets to set grid-column-end and grid-column-start
+@media (max-width: map-get($breakpoints, xl)) {
+  @for $span from 1 through $grid-columns {
+    .xl-span-#{$span} {
+      grid-column-end: span $span;
+    }
+  }
+  @for $offset from 0 through $grid-columns {
+    .xl-offset-#{$offset} {
+      grid-column-start: $offset + 1;
+    }
+  }
+}
+@media (max-width: map-get($breakpoints, lg)) {
+  @for $span from 1 through $grid-columns {
+    .lg-span-#{$span} {
+      grid-column-end: span $span;
+    }
+  }
+  @for $offset from 0 through $grid-columns {
+    .lg-offset-#{$offset} {
+      grid-column-start: $offset + 1;
+    }
+  }
+}
+@media (max-width: map-get($breakpoints, md)) {
+  @for $span from 1 through $grid-columns {
+    .md-span-#{$span} {
+      grid-column-end: span $span;
+    }
+  }
+  @for $offset from 0 through $grid-columns {
+    .md-offset-#{$offset} {
+      grid-column-start: $offset + 1;
+    }
+  }
+}
+@media (max-width: map-get($breakpoints, sm)) {
+  @for $span from 1 through $grid-columns {
+    .sm-span-#{$span} {
+      grid-column-end: span $span;
+    }
+  }
+  @for $offset from 0 through $grid-columns {
+    .sm-offset-#{$offset} {
+      grid-column-start: $offset + 1;
+    }
+  }
+}
+
+/* CSS Grid Media Queries */
+// Sets the columns to be span-12 with a starting column of 1
+@media (max-width: 380px) {
+  [class*="span-"] {
+    grid-column-end: span 12;
+  }
+  [class*="offset-"] {
+    grid-column-start: 1;
+  }
+}

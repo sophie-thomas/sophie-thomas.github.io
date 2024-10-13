@@ -1,0 +1,43 @@
+/*--- Navigation            -------*/
+nav {
+  margin: 20px 0 40px;
+}
+  
+/* Dropdown Toggle */
+.dropdown-toggle {
+  cursor: pointer;
+  width: 100%;
+  background-color: $base-colour;
+  color: $secondary-text-color;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.dropdown-content a {
+  margin-right: 10px;
+}
+  
+/*--- Navigation Media Queries            -------*/
+@media screen and (max-width: 991px) {
+  nav .grid-container {
+    padding: 0 20px;
+  }
+
+  /* Dropdown Toggle */
+  .dropdown-content {
+    display: none;
+    padding: 10px 0 0 10px;
+
+    a {
+      padding: 10px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 991px) {
+  /* Hides dropdown button on larger screens */
+  .dropdown-toggle {
+    display: none;
+  }
+}
