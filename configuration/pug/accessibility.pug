@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+
+  head
+    title Accessibility statement: The Portfolio of Sophie
+    include includes/head.pug 
+
+  body
+    include includes/skip-link.pug
+
+    include includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 Accessibility Statement
+      
+      .grid-container
+        .span-6.lg-span-12
+          p
+            | This statement applies to sophie-thomas@github.io only and does not cover any of the links shared on this site. It also does not refer to any other services on the .github.io domain.
+          p The way I have built this website means that you should be able to:
+          ul
+            li Zoom in up to 300% without the text spilling off the screen
+            li Navigate the website using just a keyboard
+          p I have also made the website text as simple as possible to understand.
+          p
+            a(href="https://abilitynet.org.uk/" target="_blank" rel="noreferrer" title="Links to: AbilityNet") AbilityNet
+            |  has advice on making your device easier to use if you have a disability.
+
+        .span-5.offset-7.lg-span-12.lg-offset-0
+          figure
+            img(src="/resources/images/sophie-full.jpg" alt="Sophie sitting at a desk in the office smiling.")
+
+      .grid-container
+        .span-12 
+          h2 Contact me about an accessibility issue
+          p
+            | I am always looking to improve the accessibility of my website to ensure it works for everyone. If you notice an accessibility issue with my website, please send me a message on 
+            a(href="https://www.linkedin.com/in/fromsophie/" target="_blank" rel="noreferrer" title="Links to: Sophie's LinkedIn profile") LinkedIn
+            | .
+
+      .grid-container
+        .span-12
+          h2 Compliance
+          p
+            | To the best of my knowledge, my website is fully compliant with the Web Content Accessibility Guidelines 2.2 to a AA standard. It has been tested using following tools to check its compliance:
+          ul
+            li
+              a(href="https://developers.google.com/web/tools/lighthouse/" target="_blank" rel="noreferrer" title="Links to: Google's Developer page about Lighthouse") Lighthouse
+            li
+              a(href="https://wave.webaim.org/" target="_blank" rel="noreferrer" title="Links to: WAVE (Web Accessibility Evaluation Tool)") Wave
+            li
+              a(href="https://www.deque.com/axe/" target="_blank" rel="noreferrer" title="Links to: Deque's page about axe DevTools") Axe DevTools
+            li
+              a(href="https://www.tpgi.com/arc-platform/arc-toolkit/" target="_blank" rel="noreferrer" title="Links to: TPGI's page about ARC Toolkit") ARC Toolkit
+
+    include includes/footer/footer-accessibility.pug
+
+  include includes/scripts.pug

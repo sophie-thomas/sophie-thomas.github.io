@@ -1,0 +1,130 @@
+/*--- Base styles            -------*/
+html {
+  font-size: $base-html-size;
+}
+
+body {
+  display: grid;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  font-family: $primary-font;
+  @include paragraph;
+  margin: 0px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+strong {
+  font-weight: bold;
+}
+hr {
+  background-color: $border-color;
+  border-radius: 10px;
+  border: 0;
+  margin: 0;
+  height: 12px;
+}
+
+/* Text Alignment */
+@include text-alignment('align', $breakpoints);
+  
+/* Skip link for accessibility */
+#skiptocontent {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
+.skip-link {
+  left: -9999px;
+  padding: 8px;
+  position: absolute;
+
+  &:active, &:focus {
+    left: 16px;
+    top: 16px;
+    z-index: 9999;
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    border: 2px solid $base-colour;
+  }
+}
+  
+/* Character styling */
+h1, h2, p {
+  margin: 0;
+}
+h1 {
+  @include heading-1;
+  margin-bottom: 20px;
+}
+h2 {
+  @include heading-2;
+  margin: 20px 0 10px;
+}
+h3 {
+  @include heading-3;
+  margin: 10px 0;
+}
+h4 {
+  @include heading-4;
+  margin: 10px 0;
+}
+p {
+  margin-bottom: 2.5rem;
+}
+.smallText {
+  @include small-text;
+}
+.codeBlock {
+  margin-bottom: 20px;
+
+  & code {
+    display: block;
+  }
+}
+code {
+  @include small-text;
+}
+  
+/* Links */
+a {
+  color: $link-text-color;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    background-color: #373839;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    outline: 0;
+  }
+  &:focus-visible {
+    outline: 0;
+  }
+}
+  
+/* Buttons */
+button {
+  background: inherit;
+  font-family: $primary-font;
+  @include paragraph;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+/* Projects */
+.project-intro {
+  @include large-text;
+}

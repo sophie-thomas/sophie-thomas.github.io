@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+
+  head
+    title See my work: The Portfolio of Sophie
+    include includes/head.pug 
+
+  body
+    include includes/skip-link.pug
+
+    include includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 Project case studies
+
+          p
+            | I love collaborating with customers and key stakeholders to design and develop user-friendly websites. Read about the projects I have been involved in:
+      
+      .grid-container
+        .span-6.lg-span-12
+          ul
+            li 
+              a(href="/case-studies/chft-charity.html" title="Links to: CHFT Charity case study") Development of CHFT's Charity website using TYPO3
+            li 
+              a(href="/case-studies/css-grid.html" title="Links to: CSS Grid case study") A simple, responsive grid system using CSS Grid and Scss
+            li 
+              a(href="/case-studies/kidcrowd.html" title="Links to: kidcrowd case study") Designing kidcrowd, a gift-giving website
+            li 
+              a(href="/case-studies/shout-associates.html" title="Links to: SHOUT Associates case study") SHOUT Associates
+            li
+              a(href="/case-studies/nhs-accessible-colours.html" title="Links to: NHS Accessible Colours case study") NHS Accessible Colours
+
+        
+        .span-5.offset-7.lg-span-12.lg-offset-0
+          figure
+            img(src="/resources/images/sophie-working.jpg" alt="Sophie working at her computer.")
+
+    include includes/footer/footer-default.pug
+
+  include includes/scripts.pug

@@ -1,0 +1,236 @@
+doctype html
+html(lang="en")
+
+  head
+    title CHFT Charity: The Portfolio of Sophie
+    include ../includes/head.pug
+
+  body 
+    include ../includes/skip-link.pug
+
+    include ../includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 Development of CHFT's Charity website using TYPO3
+          p
+            strong ~
+            |  Web Development • Content Management System (CMS) • TYPO3 CMS • CSS • jQuery
+            strong ~
+
+      .grid-container
+        .span-12
+          p.project-intro
+            | CHFT Charity makes a lasting and meaningful difference to patients and families in the hospitals and across the communities they serve. As part of their ongoing efforts and growth, the charity rebranded to better align with their vision and values.
+
+          p.project-intro
+            | Using their new branding, I designed and developed a TYPO3 sitepackage with custom containers to provide a simple and flexible template, enabling them to easily add their own content.
+
+          figure
+            img(src="/resources/images/case-studies/chft-charity/banner.jpg" alt="CHFT Charity webpage inside a laptop screen.")
+
+      .grid-container 
+        .span-12
+          p 
+            | After meeting with the Charity to discuss the new branding and their vision for the website, I began creating visual mockups in Adobe XD. I focused on the header, as this is typically what users first see when they visit a website. Each design featured rounded corners to align with the friendly feel of their brand. I presented the Charity with the 6 options, and they chose to move forward with mockup 3. 
+
+      .grid-container 
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-1.png" alt="CHFT Charity's Header mockup V1.")
+            figcaption Header Mockup 1
+
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-2.png" alt="CHFT Charity's Header mockup V2.")
+            figcaption Header Mockup 2
+
+      .grid-container 
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-3.png" alt="CHFT Charity's Header mockup V3.")
+            figcaption Header Mockup 3
+
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-4.png" alt="CHFT Charity's Header mockup V4.")
+            figcaption Header Mockup 4
+
+      .grid-container 
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-5.png" alt="CHFT Charity's Header mockup V5.")
+            figcaption Header Mockup 5
+
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/header-6.png" alt="CHFT Charity's Header mockup V6.") 
+            figcaption Header Mockup 6
+
+      .grid-container 
+        .span-12 
+          p   
+            | Upon choosing the desired header design, the Charity team requested that a 'Say thanks' form page be added to the website, linked through a button within the header area. They also requested that the 'Donate now' button to be more prominent and that both buttons be placed next to each other.
+
+          p 
+            | During this conversation, I asked whether the full logo was necessary and suggested using the simplified logo mark instead, as the "Calderdale and Huddersfield NHS Charity" wording was small and might be difficult to read for those with poor eyesight. Since the wording also appeared elsewhere on the website, the Charity team agreed, and the simplified logo mark was used going forward.
+
+          p
+            | The buttons were placed under the search box with primary and secondary button styling, making them more prominent on the page. With the 'Donate now' button moved, the navigation bar felt cleaner and less cluttered. The Charity team were pleased with these changes.
+
+      .grid-container 
+        .span-6.lg-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/navigation-1.jpg" alt="Desktop mockup of CHFT Charity's original header area.")
+            figcaption Before
+
+        .span-6.lg-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/navigation-2.jpg" alt="Desktop mockup of CHFT Charity header area following amendments.")
+            figcaption After
+
+      .grid-container 
+        .span-12 
+          figure
+            img(src="/resources/images/case-studies/chft-charity/navigation-2-mobile.jpg" alt="Mobile mockup of CHFT Charity header area following amendments.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | The homepage was then designed to show how other elements within the website would look with their new branding implemented. Initially, the elements within the main content area were going to be their secondary colour, yellow. However, after seeing this visually, the Charity decided that using orange as the full primary colour for all elements was a better fit.
+
+      .grid-container 
+        .span-6.lg-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/mockup-yellow.png" alt="Homepage mock showing the elements in yellow.")
+
+        .span-6.lg-span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/mockup-orange.png" alt="Homepage mock showing the elements in orange.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | With the design direction approved, I developed a TYPO3 sitepackage that provided the Charity with the flexibility to easily edit the content themselves. This was initially developed locally using Docker and DDEV. GitHub is used to store the sitepackage code base, enabling version control and easy deployment to the server. The SQL database is managed through PHPMyAdmin.
+
+          p 
+            | The sitepackage itself is configured primarily using TypoScript, TsConfig and HTML. CSS and JavaScript are included to provide styling and additional functionality. The Fluid Template Engine is used throughout, enabling the use of dynamic content created in TYPO3 itself. Inside the Partials and Template files, the following Fluid tags were used:
+
+          ul
+            li
+              code
+                | &lt;f:cobject /&gt;
+              |  - Render TypoScript objects, with attributes passed to specifically target pages and column positions.
+
+            li
+              code
+                | &lt;f:image /&gt;
+              |  - - Renders images.
+
+            li
+              code
+                | &lt;f:if /&gt;
+              |  - Renders content based on a condition.
+              code 
+                | &lt;f:then&gt;&nbsp;
+              | renders content if the statement is true, and
+              code 
+                | &lt;f:else&gt;&nbsp;
+              | renders content if the statement is false.
+
+            li
+              code
+                | &lt;f:render /&gt;
+              |  - Renders partial templates or sections. 
+
+          p 
+            | Using TYPO3's Container Elements, I coded custom containers to give the Charity customisable layout options for each page. Content Defender was used to enabled additional functionality to the containers as well as the core backend layout, allowing the ability to set maxItems and to define allowed and disallowed elements. Once defined, these options can be selected inside TYPO3 backend as shown in the screenshot below.
+      
+      .grid-container 
+        .span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/typo3_contentElement.png" alt="Screenshot showing TYPO3's Create new content element pop-up.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | Third-party TYPO3 extensions were utilised to provide additional functionality such as search and news. To customise these to match the design, the extension files were amended through the sitepackage. This was achieved using the @import feature to include TypoScript files containing specific configurations. Root paths were set to define the locations of the HTML files that override the default views.
+
+          p 
+            | In addition to this, TsConfig was coded to define the website layouts, headers, frames, and available content elements.
+
+          p 
+            | Further flexibility in styling the content elements was provided through the use of Frames and RTE (Rich Text Editor) Styles.
+
+          p 
+            | I created a custom Default.yaml file within the RTE directory of the sitepackage. This file was defined in the PageTS and included additional styled elements that the Charity could select within TYPO3. CSS was then used to target these classes, giving the elements the desired styling.
+
+          p 
+            | Custom Frames were created to wrap a specified tag around the content element to which they are applied, enabling targeted styling using CSS and JavaScript. In this particular case, I provided the Charity with two Frames. These Frames were configured in the Frames.typoscript file, and their labels were set within the TCEFORM.tsconfig file.
+
+          p  
+            | One of my favourite aspects of the project was using CSS and jQuery to make their Digital Bee Mascot fly into view. 
+
+          p 
+            | This feature was a late addition to the website, implemented just a week before the launch date. I discussed with the client the best approach to include it without overpowering or clashing with the existing content. Based on my recommendation, we agreed that the footer was the most suitable placement. With this addition, other elements within the footer needed to be rearranged. To ensure the client was satisfied with the layout, I designed a mockup in Adobe XD to show these changes before coding them into the site.
+
+      .grid-container 
+        .span-12
+          figure
+            img(src="/resources/images/case-studies/chft-charity/footer-bee-mascot.jpg" alt="CHFT Charity's Footer showing the Bee Mascot.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | With one of the requirements from the Charity being the inclusion of movement, I felt that this particular element lent itself perfectly to animate into view. I implemented this using jQuery, which detects when the element enters the viewport and then applies the CSS classes to trigger the transitions. CSS Transitions were utilised to ensure smooth movement on the screen. To optimise performance, I added a line of code to stop observing elements once the CSS class has been applied. This transition effect was extended to the Ray's graphics, adding further movement to the pages and fulfilling the initial requirements of the website build.
+
+      .grid-container
+        .span-12
+          .video-embed
+            iframe(src="https://www.youtube.com/embed/lDC2sCwqpEA?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+
+      .grid-container 
+        .span-12 
+          p 
+            | Incorporating the new branding into their website, built on the TYPO3 Content Management System, enables the Charity to promote and share the amazing work they are doing within the Calderdale and Huddersfield hospital sites, as well as within the surrounding communities.
+
+      .grid-container.media-height-match
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/chft-charity/page-1.jpeg" alt="CHFT Charity's Home page.")
+
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/chft-charity/page-2.jpeg" alt="CHFT Charity's About us page.")
+
+      .grid-container.media-height-match
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/chft-charity/page-3.jpeg" alt="CHFT Charity's In memory page.")
+
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/chft-charity/page-4.jpeg" alt="CHFT Charity's Our events page.")
+
+      .grid-container 
+        .span-12 
+          p 
+            strong  
+              | 🗣️ Testimonial from Emma Kovaleski, Charity Manager: 
+            br
+            | "Sophie, you are absolutely an integral part of the CHFT Charity team and a pleasure to work alongside! Thank you for all your time and investment in helping the charity of CHFT and our Emily to be the most AMAZING web version of themselves."
+
+          a(href="https://www.chftcharity.co.uk/home" target="_blank" rel="noreferrer" title="Links to: CHFT Charity's website") 💻 View CHFT Charity's website
+
+    .grid-container 
+      .span-12 
+        p.smallText 
+          | This website was designed and developed during my employment with The Health Informatics Service using their branding guidance which was created by an external agency. 
+
+        p.smallText
+          | Content maintenance has since been passed over to CHFT Charity. Editing advice and accessibility guidance is shared with the Charity team regularly.
+
+    include ../includes/footer/footer-default.pug
+
+  include ../includes/scripts.pug

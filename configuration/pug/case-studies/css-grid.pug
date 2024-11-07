@@ -1,0 +1,231 @@
+doctype html
+html(lang="en")
+
+  head
+    title CSS Grid: The Portfolio of Sophie
+    include ../includes/head.pug
+
+  body 
+    include ../includes/skip-link.pug
+
+    include ../includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 A simple, responsive grid system using CSS Grid and Scss
+          p
+            strong ~
+            |  CSS Grid • Scss • HTML
+            strong ~
+
+      .grid-container
+        .span-12
+          p.project-intro
+            | Using CSS Grid properties and Scss features, I developed a simple, responsive grid system that can be easily integrated into projects. ​​​​​​​It allows you to define column spans and offsets as well as text alignments using breakpoints.
+
+          figure
+            img(src="/resources/images/case-studies/css-grid/grid-1.png" alt="CSS Grid columns, highlighting the grid area.")
+
+        .span-12
+          p 
+            | The first iteration of my CSS Grid was simple and focused on the ability to specify the number of columns a column would span. However, as I began considering how others might utilise the grid, I expanded its functionality by incorporating the ability to offset columns, thereby creating further flexibility when creating layouts. 
+          p
+            | To increase flexibility further, I implemented the ability define various column spans and offsets according to specified breakpoints, as well as text alignments. 
+
+          p 
+            | Using Scss, I utilised features such as defining variables and mixins, nesting selectors, performing calculations, and applying flow control rules. All of this helped in reducing duplication in my code, making it quicker and easier to maintain and for others to adopt.
+
+          figure
+            img(src="/resources/images/case-studies/css-grid/grid-2.png" alt="CSS Grid column spans and offsets defined using breakpoints.")
+
+          p 
+            | Variables are used to specify the number of grid columns, the gap between the columns and the breakpoints. This speeds up development, as you only need to amend the variable value rather than manually finding and replacing every instance of that value in your code.
+          
+          .codeBlock
+            code // CSS Grid
+            code $grid-columns: 12;
+            code $gap: 10px;
+            br
+            code // - Breakpoints
+            code $breakpoints: (
+            code &nbsp;sm: 576px,
+            code &nbsp;md: 768px,
+            code &nbsp;lg: 992px,
+            code &nbsp;xl: 1200px
+            code );
+
+          p 
+            | Before defining the columns, the setup of the grid itself was necessary. To enhance versatility of the grid, I created two containers with the latter defining a max-width:
+          
+          ul 
+            li 
+              | grid-container-fluid
+            li 
+              | grid-container
+          
+          p 
+            | The container sets both the number of columns and the gap between them. Both of these values are defined in the variables.scss file.
+          p 
+            | grid-template-columns is used to define the number and size of the columns. 1fr is a CSS unit representing a fraction of the space in the grid container. Using repeat, I set each column to be an equal fraction which is repeated by the number defined in the $grid-columns variable. 
+          
+          .codeBlock 
+            code .grid-container-fluid, .grid-container {
+            code &nbsp;display: grid;
+            code &nbsp;grid-template-columns: repeat($grid-columns, 1fr);
+            code &nbsp;gap: $gap;
+            code &nbsp;padding: 10px 20px;
+            code }
+            code .grid-container {
+            code &nbsp;max-width: 1360px;
+            code &nbsp;margin: 0 auto;
+            code }
+          
+          p 
+            | The @for loop, which is a Scss control rule, iterated through my column spans and offsets to define their position on the grid. The @for loop counts from the specified number up to the value set in the $grid-columns variable, thereby establishing the span or offset number. To simplify the calculation of offsets and to ensure they begin in the correct position, +1 was needed. 
+          
+          .codeBlock 
+            code @for $span from 1 through $grid-columns {
+            code &nbsp;.span-#{$span} {
+            code &nbsp;&nbsp;grid-column-end: span $span;
+            code &nbsp;}
+            code }
+            code @for $offset from 0 through $grid-columns {
+            code &nbsp;.offset-#{$offset} {
+            code &nbsp;&nbsp;grid-column-start: $offset + 1;
+            code &nbsp;} 
+            code }
+          p 
+            | To increase flexibility, I coded the ability the define different column spans and offsets based on breakpoints. I utilised @for loops within media queries to implemented this functionality. These operate similarly to the previous @for loops. The media queries are used to establish the breakpoint values whilst also generating the breakpoint class names. The loop then iterates through the spans and offsets to set the grid-column-end and grid-column-start value for each breakpoint. 
+          
+          .codeBlock
+            code @media (max-width: map-get($breakpoints, xl)) {
+              code &nbsp;@for $span from 1 through $grid-columns {
+                  code &nbsp;&nbsp;.xl-span-#{$span} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-end: span $span;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+              code &nbsp;@for $offset from 0 through $grid-columns {
+                  code &nbsp;&nbsp;.xl-offset-#{$offset} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+            code }
+            code @media (max-width: map-get($breakpoints, lg)) {
+              code &nbsp;@for $span from 1 through $grid-columns {
+                  code &nbsp;&nbsp;.lg-span-#{$span} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-end: span $span;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+              code &nbsp;@for $offset from 0 through $grid-columns {
+                  code &nbsp;&nbsp;.lg-offset-#{$offset} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+            code }
+            code @media (max-width: map-get($breakpoints, md)) {
+              code &nbsp;@for $span from 1 through $grid-columns {
+                  code &nbsp;&nbsp;.md-span-#{$span} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-end: span $span;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+              code &nbsp;@for $offset from 0 through $grid-columns {
+                  code &nbsp;&nbsp;.md-offset-#{$offset} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+            code }
+            code @media (max-width: map-get($breakpoints, sm)) {
+              code &nbsp;@for $span from 1 through $grid-columns {
+                  code &nbsp;&nbsp;.sm-span-#{$span} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-end: span $span;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+              code &nbsp;@for $offset from 0 through $grid-columns {
+                  code &nbsp;&nbsp;.sm-offset-#{$offset} {
+                    code &nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+            code }
+
+          p 
+            | To ensure the columns are optimised for mobile devices, I added a custom media query that sets the columns to be span-12 with a starting column of 1 at 380px.
+
+          .codeBlock
+            code @media (max-width: 380px) {
+              code &nbsp;[class*="span-"] {
+                  code &nbsp;&nbsp;grid-column-end: span 12;
+              code &nbsp;} 
+              code &nbsp;[class*="offset-"] {
+                  code &nbsp;&nbsp;grid-column-start: 1;
+              code &nbsp;}
+            code }
+
+          p 
+            | The final addition I implemented was adding the ability to set text alignments based on the defined breakpoints. This was accomplished through the use of a @mixin which contained a @each control rule. 
+          p 
+            | The @mixin uses the parameters set and iterates over each breakpoint defined in the varaibles.scss file. These breakpoints establish the max-width in media queries. Within each media query, it generates the class names based on the parameters. 
+          
+          .codeBlock
+            code @mixin text-alignment($prefix, $breakpoints) {
+              code &nbsp;.align-left { text-align: left; }
+              code &nbsp;.align-right { text-align: right; }
+              code &nbsp;.align-center { text-align: center; }
+
+              br
+
+              code &nbsp;@each $breakpoint, $value in $breakpoints {
+                  code &nbsp;&nbsp;@media (max-width: map-get($breakpoints,        $breakpoint)) {
+                    code &nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-left { text-align: left; }
+                    code &nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-right { text-align: right; }
+                    code &nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-center { text-align: center; }
+                  code &nbsp;&nbsp;}
+              code &nbsp;}
+            code }
+          
+          p 
+            | Using a @mixin prevents repetition as when you include the mixin the $prefix is defined. This is achieved with the following Scss code:
+          
+          p
+            code @include text-alignment('align', $breakpoints);
+          
+          p 
+            | The $value variable isn't directly utilised within this loop but is included to fulfill the syntax requirements of the @each directive, which expects two variables.
+          
+          figure
+            img(src="/resources/images/case-studies/css-grid/grid-3.png" alt="CSS Grid columns showing spanning and offsets.")
+          
+          p 
+            | In summary, the grid system provides:
+          
+          ul 
+            li
+              | the flexibility to adjust the number of columns in the grid (by default this is set to 12 through the $grid-columns variable).
+            li 
+              | the ability to specify the number of columns a column will span and to set offsets on columns. These can be configured for each breakpoint (xl, lg, md, sm).
+            li 
+              | the flexibility to modify the breakpoints by adjusting the widths inside the variables.scss file. 
+            li 
+              | the ability to set text alignments based on breakpoints for left, right and center text alignments.
+          
+          p 
+            | Take a look at my code, and feel free to use and adapt it in your next project!
+
+          a(href="https://codepen.io/fromsophie/pen/rNbbPWR" target="_blank" rel="noreferrer" title="Links to: Sophie's Codepen of her CSS Grid project") 📝 Edit on Codepen
+          br
+          a(href="https://github.com/sophie-thomas/CSS-Grid" target="_blank" rel="noreferrer" title="Links to: Sophie's CSS-Grid Github repository") 👩‍💻 Download my CSS-Grid repository on Github
+
+        .span-12 
+          h2 Previous versions
+          
+          ul 
+            li  
+              | CSS Grid: V1 — Column spans and offsets are adjusted automatically for smaller screens using @media queries at defined breakpoints rather than being able to manually define them. 
+              br
+              a(href="https://codepen.io/fromsophie/pen/BaEvxyZ" target="_blank" rel="noreferrer" title="Links to: Sophie's Codepen of her 1st verison of the CSS Grid project") 📝 Edit CSS Grid: V1 on Codepen
+
+
+
+    include ../includes/footer/footer-default.pug
+
+  include ../includes/scripts.pug

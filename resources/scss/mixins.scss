@@ -1,0 +1,55 @@
+/*--- Mixins           -------*/
+
+@mixin heading-1 {
+  font-size: $heading-1-size;
+  line-height: #{$heading-1-size * $line-height};
+  word-spacing: #{$heading-1-size * $word-spacing};
+}
+@mixin heading-2 {
+  font-size: $heading-2-size;
+  line-height: #{$heading-2-size * $line-height};
+  word-spacing: #{$heading-2-size * $word-spacing};
+}
+@mixin heading-3 {
+  font-size: $heading-3-size;
+  line-height: #{$heading-3-size * $line-height};
+  word-spacing: #{$heading-3-size * $word-spacing};
+}
+@mixin heading-4 {
+  font-size: $heading-4-size;
+  line-height: #{$heading-4-size * $line-height};
+  word-spacing: #{$heading-4-size * $word-spacing};
+}
+@mixin paragraph {
+  font-size: $paragraph-size;
+  line-height: #{$paragraph-size * $line-height};
+  word-spacing: #{$paragraph-size * $word-spacing};
+}
+@mixin large-text {
+  font-size: $largetext-size;
+  line-height: #{$largetext-size * $line-height};
+  word-spacing: #{$largetext-size * $word-spacing};
+}
+@mixin small-text {
+  font-size: $smalltext-size;
+  line-height: #{$smalltext-size * $line-height};
+  word-spacing: #{$smalltext-size * $word-spacing};
+}
+@mixin caption {
+  font-size: $caption-size;
+  line-height: #{$caption-size * $line-height};
+  word-spacing: #{$caption-size * $word-spacing};
+}
+@mixin text-alignment($prefix, $breakpoints) {
+  .align-left { text-align: left; }
+  .align-right { text-align: right; }
+  .align-center { text-align: center; }
+  
+  @each $breakpoint, $value in $breakpoints {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      .#{$breakpoint}-#{$prefix}-left { text-align: left; }
+      .#{$breakpoint}-#{$prefix}-right { text-align: right; }
+      .#{$breakpoint}-#{$prefix}-center { text-align: center; }
+    }
+  }
+}

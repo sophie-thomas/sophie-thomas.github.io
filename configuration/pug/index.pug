@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+
+  head
+    title The Portfolio of Sophie
+    include includes/head.pug 
+
+  body
+    include includes/skip-link.pug
+
+    include includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 Hello, I'm Sophie Thomas
+      
+      .grid-container
+        .span-12
+          p
+            strong
+              | I love turning complex problems into simple, user-friendly and accessible websites, while collaborating closely with others to bring theirs ideas to the screen. When I'm not crafting websites, I'm usually off exploring waterfalls or out riding trails.
+
+      .grid-container
+        .span-6.lg-span-12
+          p
+            | With over 7 years of public-sector experience, I design and develop accessible, user-friendly, and reliable websites using TYPO3. I collaborate closely with customers to ensure their websites align with branding guidelines and project requirements. My passion and understanding for accessibility, particularly the Web Content Accessibility Guidelines, means that it is at the core of my decision-making to ensure everyone, regardless of ability, has the best possible experience when interacting with digital assets.
+
+          p
+            | In my current role as Frontend lead, I ensure project delivery aligns with company strategy and team roadmaps, playing a key role in shaping the strategic direction of the service. I also mentor junior web developers, supporting their growth and ensuring continuous improvement within the team. I always strive to go above and beyond, delivering the level of service I would expect for myself.
+        
+        .span-5.offset-7.lg-span-12.lg-offset-0
+          figure
+            img(src="/resources/images/sophie-headshot.jpg" alt="Sophie smiling.")
+
+      .grid-container
+        .span-12
+          h2 My skills
+          p
+            | TYPO3 Content Mangement System • Web Design / Development • Adobe Creative Suite • HTML • CSS (including Scss and Bootstrap Framework) • jQuery • Github • Web Content Accessibility Guidelines • Video Production • PRINCE2 Agile&reg; • Project Management
+
+    include includes/footer/footer-index.pug
+
+  include includes/scripts.pug

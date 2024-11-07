@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+
+  head
+    title NHS Accessible Colours: The Portfolio of Sophie
+    include ../includes/head.pug
+
+  body 
+    include ../includes/skip-link.pug
+
+    include ../includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 NHS Accessible Colours
+          p
+            strong ~
+            |  Website Design and Development • HTML • SASS • jQuery • Bootstrap • Web Accessibility 
+            strong ~
+      
+      .grid-container
+        .span-12
+          p.project-intro
+            | Public-Sector organisations have an obligation under the The Public Sector Bodies Accessibility Regulations 2018 to meet Web Content Accessibility Guidelines (WCAG). Alongside this, NHS organisations need to ensure they comply with the NHS Identity Guidelines. An aspect of those NHS Identity Guidelines show the 23 colours that can be used. However, it doesn't show which colour combinations meet the colour contrast ratio standards.
+          p.project-intro
+            | I designed and developed a website that combines the NHS Colour Guidelines with the Colour Contrast standards into a single, user-friendly website. The website aims to assist individuals in identifying NHS colour combinations that adhere to either AA or AAA compliance for contrast ratios, providing the ability of copying the corresponding HEX codes for seamless integration into their projects.
+
+          figure
+            img(src="/resources/images/case-studies/nhs-accessible-colours/banner.png" alt="NHS Accessible Colours.")
+        
+        .span-12
+          p
+            | Prior to starting this project, I researched both the NHS Identity Guidelines and Colour Contrast standards. Understanding the guidelines was an important aspect of this project with it being the basis of it.
+          p
+            | The NHS has 23 colours split into 4 levels: NHS Blues, NHS Neutrals, NHS Support Green&apos;s and NHS Highlights. Each of these 23 colours can be tinted. The accessibility guidelines state that the contrast ratio between foreground and background colours must be at least 4.5:1 to meet AA standard and 7:1 to meet AAA standards.
+          p
+            | After researching how existing NHS website adhered to these guidelines, I started the design process by sketching out wireframes. Following this, I designed the website using Adobe XD showing how it would look on both desktop and mobile screen sizes. I also created a prototype to show how the users would interact with it.
+          p
+            | Using the designs, I coded the website using HTML, SASS which I complied into CSS using Prepros, and jQuery. CSS transitions and jQuery were used to provide interaction on certain elements. Bootstrap, which is a CSS Framework, was used as a base for the styles and to provide a responsive grid.
+          
+          figure
+            img(src="/resources/images/case-studies/nhs-accessible-colours/level1-mockup.png" alt="Design mockup of the Level 1 Colours page.")
+
+          p
+            | The video presentation below details the whole process I took with this project from research and design to build.
+         
+          div.video-embed
+            iframe(src="https://www.youtube-nocookie.com/embed/zdvAcLyIGHU?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+
+    include ../includes/footer/footer-default.pug
+
+  include ../includes/scripts.pug

@@ -1,0 +1,867 @@
+/*--- Variables           -------*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/*--- Mixins           -------*/
+/*--- Base styles            -------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  background-color: #fff;
+  color: #373839;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.32rem;
+  margin: 0px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {
+  background-color: #373839;
+  border-radius: 10px;
+  border: 0;
+  margin: 0;
+  height: 12px;
+}
+
+/* Text Alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .sm-align-left {
+    text-align: left;
+  }
+
+  .sm-align-right {
+    text-align: right;
+  }
+
+  .sm-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .md-align-left {
+    text-align: left;
+  }
+
+  .md-align-right {
+    text-align: right;
+  }
+
+  .md-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .lg-align-left {
+    text-align: left;
+  }
+
+  .lg-align-right {
+    text-align: right;
+  }
+
+  .lg-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 1200px) {
+  .xl-align-left {
+    text-align: left;
+  }
+
+  .xl-align-right {
+    text-align: right;
+  }
+
+  .xl-align-center {
+    text-align: center;
+  }
+}
+/* Skip link for accessibility */
+#skiptocontent {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
+.skip-link {
+  left: -9999px;
+  padding: 8px;
+  position: absolute;
+}
+.skip-link:active, .skip-link:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+  background-color: #fff;
+  color: #373839;
+  border: 2px solid #373839;
+}
+
+/* Character styling */
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.6rem;
+  line-height: 6.9rem;
+  word-spacing: 0.736rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 6rem;
+  word-spacing: 0.64rem;
+  margin: 20px 0 10px;
+}
+
+h3 {
+  font-size: 3.6rem;
+  line-height: 5.4rem;
+  word-spacing: 0.576rem;
+  margin: 10px 0;
+}
+
+h4 {
+  font-size: 3.4rem;
+  line-height: 5.1rem;
+  word-spacing: 0.544rem;
+  margin: 10px 0;
+}
+
+p {
+  margin-bottom: 2.5rem;
+}
+
+.smallText {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  word-spacing: 0.288rem;
+}
+
+.codeBlock {
+  margin-bottom: 20px;
+}
+.codeBlock code {
+  display: block;
+}
+
+code {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  word-spacing: 0.288rem;
+}
+
+/* Links */
+a {
+  color: #373839;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  background-color: #373839;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  outline: 0;
+}
+a:focus-visible {
+  outline: 0;
+}
+
+/* Buttons */
+button {
+  background: inherit;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.32rem;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+}
+button:hover, button:focus {
+  text-decoration: underline;
+}
+
+/* Projects */
+.project-intro {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  word-spacing: 0.352rem;
+}
+
+/*--- CSS Grid           -------*/
+.grid-container-fluid, .grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  padding: 10px 20px;
+}
+.grid-container-fluid [class*=span-], .grid-container [class*=span-] {
+  padding: 0 10px 0 0;
+}
+.grid-container-fluid [class*=span-]:has(hr), .grid-container [class*=span-]:has(hr) {
+  padding: 0;
+}
+
+.grid-container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Defining columns spans and offsets */
+.span-1 {
+  grid-column-end: span 1;
+}
+
+.span-2 {
+  grid-column-end: span 2;
+}
+
+.span-3 {
+  grid-column-end: span 3;
+}
+
+.span-4 {
+  grid-column-end: span 4;
+}
+
+.span-5 {
+  grid-column-end: span 5;
+}
+
+.span-6 {
+  grid-column-end: span 6;
+}
+
+.span-7 {
+  grid-column-end: span 7;
+}
+
+.span-8 {
+  grid-column-end: span 8;
+}
+
+.span-9 {
+  grid-column-end: span 9;
+}
+
+.span-10 {
+  grid-column-end: span 10;
+}
+
+.span-11 {
+  grid-column-end: span 11;
+}
+
+.span-12 {
+  grid-column-end: span 12;
+}
+
+.offset-0 {
+  grid-column-start: 1;
+}
+
+.offset-1 {
+  grid-column-start: 2;
+}
+
+.offset-2 {
+  grid-column-start: 3;
+}
+
+.offset-3 {
+  grid-column-start: 4;
+}
+
+.offset-4 {
+  grid-column-start: 5;
+}
+
+.offset-5 {
+  grid-column-start: 6;
+}
+
+.offset-6 {
+  grid-column-start: 7;
+}
+
+.offset-7 {
+  grid-column-start: 8;
+}
+
+.offset-8 {
+  grid-column-start: 9;
+}
+
+.offset-9 {
+  grid-column-start: 10;
+}
+
+.offset-10 {
+  grid-column-start: 11;
+}
+
+.offset-11 {
+  grid-column-start: 12;
+}
+
+.offset-12 {
+  grid-column-start: 13;
+}
+
+@media (max-width: 1200px) {
+  .xl-span-1 {
+    grid-column-end: span 1;
+  }
+
+  .xl-span-2 {
+    grid-column-end: span 2;
+  }
+
+  .xl-span-3 {
+    grid-column-end: span 3;
+  }
+
+  .xl-span-4 {
+    grid-column-end: span 4;
+  }
+
+  .xl-span-5 {
+    grid-column-end: span 5;
+  }
+
+  .xl-span-6 {
+    grid-column-end: span 6;
+  }
+
+  .xl-span-7 {
+    grid-column-end: span 7;
+  }
+
+  .xl-span-8 {
+    grid-column-end: span 8;
+  }
+
+  .xl-span-9 {
+    grid-column-end: span 9;
+  }
+
+  .xl-span-10 {
+    grid-column-end: span 10;
+  }
+
+  .xl-span-11 {
+    grid-column-end: span 11;
+  }
+
+  .xl-span-12 {
+    grid-column-end: span 12;
+  }
+
+  .xl-offset-0 {
+    grid-column-start: 1;
+  }
+
+  .xl-offset-1 {
+    grid-column-start: 2;
+  }
+
+  .xl-offset-2 {
+    grid-column-start: 3;
+  }
+
+  .xl-offset-3 {
+    grid-column-start: 4;
+  }
+
+  .xl-offset-4 {
+    grid-column-start: 5;
+  }
+
+  .xl-offset-5 {
+    grid-column-start: 6;
+  }
+
+  .xl-offset-6 {
+    grid-column-start: 7;
+  }
+
+  .xl-offset-7 {
+    grid-column-start: 8;
+  }
+
+  .xl-offset-8 {
+    grid-column-start: 9;
+  }
+
+  .xl-offset-9 {
+    grid-column-start: 10;
+  }
+
+  .xl-offset-10 {
+    grid-column-start: 11;
+  }
+
+  .xl-offset-11 {
+    grid-column-start: 12;
+  }
+
+  .xl-offset-12 {
+    grid-column-start: 13;
+  }
+}
+@media (max-width: 992px) {
+  .lg-span-1 {
+    grid-column-end: span 1;
+  }
+
+  .lg-span-2 {
+    grid-column-end: span 2;
+  }
+
+  .lg-span-3 {
+    grid-column-end: span 3;
+  }
+
+  .lg-span-4 {
+    grid-column-end: span 4;
+  }
+
+  .lg-span-5 {
+    grid-column-end: span 5;
+  }
+
+  .lg-span-6 {
+    grid-column-end: span 6;
+  }
+
+  .lg-span-7 {
+    grid-column-end: span 7;
+  }
+
+  .lg-span-8 {
+    grid-column-end: span 8;
+  }
+
+  .lg-span-9 {
+    grid-column-end: span 9;
+  }
+
+  .lg-span-10 {
+    grid-column-end: span 10;
+  }
+
+  .lg-span-11 {
+    grid-column-end: span 11;
+  }
+
+  .lg-span-12 {
+    grid-column-end: span 12;
+  }
+
+  .lg-offset-0 {
+    grid-column-start: 1;
+  }
+
+  .lg-offset-1 {
+    grid-column-start: 2;
+  }
+
+  .lg-offset-2 {
+    grid-column-start: 3;
+  }
+
+  .lg-offset-3 {
+    grid-column-start: 4;
+  }
+
+  .lg-offset-4 {
+    grid-column-start: 5;
+  }
+
+  .lg-offset-5 {
+    grid-column-start: 6;
+  }
+
+  .lg-offset-6 {
+    grid-column-start: 7;
+  }
+
+  .lg-offset-7 {
+    grid-column-start: 8;
+  }
+
+  .lg-offset-8 {
+    grid-column-start: 9;
+  }
+
+  .lg-offset-9 {
+    grid-column-start: 10;
+  }
+
+  .lg-offset-10 {
+    grid-column-start: 11;
+  }
+
+  .lg-offset-11 {
+    grid-column-start: 12;
+  }
+
+  .lg-offset-12 {
+    grid-column-start: 13;
+  }
+}
+@media (max-width: 768px) {
+  .md-span-1 {
+    grid-column-end: span 1;
+  }
+
+  .md-span-2 {
+    grid-column-end: span 2;
+  }
+
+  .md-span-3 {
+    grid-column-end: span 3;
+  }
+
+  .md-span-4 {
+    grid-column-end: span 4;
+  }
+
+  .md-span-5 {
+    grid-column-end: span 5;
+  }
+
+  .md-span-6 {
+    grid-column-end: span 6;
+  }
+
+  .md-span-7 {
+    grid-column-end: span 7;
+  }
+
+  .md-span-8 {
+    grid-column-end: span 8;
+  }
+
+  .md-span-9 {
+    grid-column-end: span 9;
+  }
+
+  .md-span-10 {
+    grid-column-end: span 10;
+  }
+
+  .md-span-11 {
+    grid-column-end: span 11;
+  }
+
+  .md-span-12 {
+    grid-column-end: span 12;
+  }
+
+  .md-offset-0 {
+    grid-column-start: 1;
+  }
+
+  .md-offset-1 {
+    grid-column-start: 2;
+  }
+
+  .md-offset-2 {
+    grid-column-start: 3;
+  }
+
+  .md-offset-3 {
+    grid-column-start: 4;
+  }
+
+  .md-offset-4 {
+    grid-column-start: 5;
+  }
+
+  .md-offset-5 {
+    grid-column-start: 6;
+  }
+
+  .md-offset-6 {
+    grid-column-start: 7;
+  }
+
+  .md-offset-7 {
+    grid-column-start: 8;
+  }
+
+  .md-offset-8 {
+    grid-column-start: 9;
+  }
+
+  .md-offset-9 {
+    grid-column-start: 10;
+  }
+
+  .md-offset-10 {
+    grid-column-start: 11;
+  }
+
+  .md-offset-11 {
+    grid-column-start: 12;
+  }
+
+  .md-offset-12 {
+    grid-column-start: 13;
+  }
+}
+@media (max-width: 576px) {
+  .sm-span-1 {
+    grid-column-end: span 1;
+  }
+
+  .sm-span-2 {
+    grid-column-end: span 2;
+  }
+
+  .sm-span-3 {
+    grid-column-end: span 3;
+  }
+
+  .sm-span-4 {
+    grid-column-end: span 4;
+  }
+
+  .sm-span-5 {
+    grid-column-end: span 5;
+  }
+
+  .sm-span-6 {
+    grid-column-end: span 6;
+  }
+
+  .sm-span-7 {
+    grid-column-end: span 7;
+  }
+
+  .sm-span-8 {
+    grid-column-end: span 8;
+  }
+
+  .sm-span-9 {
+    grid-column-end: span 9;
+  }
+
+  .sm-span-10 {
+    grid-column-end: span 10;
+  }
+
+  .sm-span-11 {
+    grid-column-end: span 11;
+  }
+
+  .sm-span-12 {
+    grid-column-end: span 12;
+  }
+
+  .sm-offset-0 {
+    grid-column-start: 1;
+  }
+
+  .sm-offset-1 {
+    grid-column-start: 2;
+  }
+
+  .sm-offset-2 {
+    grid-column-start: 3;
+  }
+
+  .sm-offset-3 {
+    grid-column-start: 4;
+  }
+
+  .sm-offset-4 {
+    grid-column-start: 5;
+  }
+
+  .sm-offset-5 {
+    grid-column-start: 6;
+  }
+
+  .sm-offset-6 {
+    grid-column-start: 7;
+  }
+
+  .sm-offset-7 {
+    grid-column-start: 8;
+  }
+
+  .sm-offset-8 {
+    grid-column-start: 9;
+  }
+
+  .sm-offset-9 {
+    grid-column-start: 10;
+  }
+
+  .sm-offset-10 {
+    grid-column-start: 11;
+  }
+
+  .sm-offset-11 {
+    grid-column-start: 12;
+  }
+
+  .sm-offset-12 {
+    grid-column-start: 13;
+  }
+}
+/* CSS Grid Media Queries */
+@media (max-width: 380px) {
+  [class*=span-] {
+    grid-column-end: span 12;
+  }
+
+  [class*=offset-] {
+    grid-column-start: 1;
+  }
+}
+/*--- Media            -------*/
+figure {
+  border-radius: 10px;
+  box-shadow: 10px 10px #373839;
+  margin: 0 0 3.5rem;
+  padding: 0;
+}
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+figure figcaption {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  word-spacing: 0.256rem;
+  padding: 10px 0;
+}
+
+.media-height-match {
+  grid-auto-rows: 1fr;
+  margin-bottom: 2.5rem;
+}
+.media-height-match figure {
+  display: grid;
+  height: 100%;
+}
+.media-height-match figure img {
+  object-fit: fill;
+  height: 100%;
+}
+.media-height-match figure img.contain {
+  object-fit: contain;
+}
+
+.video-embed {
+  width: 100%;
+}
+.video-embed iframe {
+  height: 576px;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px #373839;
+  margin-bottom: 2.5rem;
+}
+
+iframe {
+  width: 100%;
+}
+
+/*--- Navigation            -------*/
+nav {
+  margin: 20px 0 40px;
+  /* Dropdown Toggle */
+}
+nav .dropdown-toggle {
+  cursor: pointer;
+  width: 100%;
+  background-color: #373839;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: left;
+}
+nav .dropdown-content a {
+  margin-right: 20px;
+}
+nav .dropdown-content a.active {
+  background-color: #373839;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/*--- Navigation Media Queries            -------*/
+@media screen and (max-width: 991px) {
+  nav {
+    /* Dropdown Toggle */
+  }
+  nav .grid-container {
+    padding: 0 20px;
+  }
+  nav .dropdown-content {
+    display: none;
+    padding: 10px 0 0 10px;
+  }
+  nav .dropdown-content a {
+    padding: 10px 0;
+  }
+}
+@media screen and (min-width: 991px) {
+  nav {
+    /* Hides dropdown button on larger screens */
+  }
+  nav .dropdown-toggle {
+    display: none;
+  }
+}
+/*--- Footer           -------*/
+footer {
+  margin-top: 40px;
+}
+
+/* Footer Media Queries*/
+@media screen and (max-width: 991px) {
+  footer {
+    margin-top: 20px;
+  }
+  footer hr {
+    margin-bottom: 10px;
+  }
+}

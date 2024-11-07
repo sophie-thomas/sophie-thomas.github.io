@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Grid: The Portfolio of Sophie</title>
+    <!-- Global Meta Tag and -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sophie Thomas">
+    <meta name="description" content="I design and develop accessible and user-friendly websites.">
+    <meta name="keywords" content="Web, Design, UI/UX Design, Web Design, Web Development, Videography, Web Accessibility, TYPO3">
+    <link rel="stylesheet" href="/resources/css/base.css" type="text/css">
+    <link href="/resources/images/favicon.png" rel="shortcut icon" type="image/png">
+    <!-- Open Graph Meta Tags-->
+    <meta property="og:url" content="https://sophie-thomas.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Portfolio of Sophie">
+    <meta property="og:description" content="I design and develop accessible and user-friendly websites.">
+    <meta property="og:image" content="https://sophie-thomas.github.io/resources/images/sophie_headshot.jpg">
+    <!-- Twitter Meta Tags-->
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:domain" content="sophie-thomas.github.io">
+    <meta property="twitter:url" content="https://sophie-thomas.github.io/">
+    <meta name="twitter:title" content="The Portfolio of Sophie">
+    <meta name="twitter:description" content="I design and develop accessible and user-friendly websites.">
+    <meta name="twitter:image" content="https://sophie-thomas.github.io/resources/images/sophie_headshot.jpg">
+    <!-- Google Analytics Tag-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6CQC6VB9LZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6CQC6VB9LZ');
+    </script>
+  </head>
+  <body> 
+    <!-- Skip Link--><a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Navigation-->
+    <nav>
+      <div class="grid-container">
+        <div class="span-12">
+          <button class="dropdown-toggle" aria-expanded="false">Menu</button>
+          <div class="dropdown-content"><a href="/work.html" title="Links to: Sophie's Project Case Studies">👩&zwj;💻 See my work</a><a href="https://medium.com/@articlesfromsophie" target="_blank" rel="noreferrer" title="Links to: Articles from Sophie">✍️ Read my thoughts</a><a href="https://www.youtube.com/@fromsophiecycles" target="_blank" rel="noreferrer" title="Links to: Sophie Cycles on YouTube">🚴 Watch me cycle</a><a href="https://www.tiktok.com/@fromsophie" target="_blank" rel="noreferrer" title="Links to: fromsophie on TikTok">🥾 Watch me stomp</a><a href="https://www.linkedin.com/in/fromsophie/" target="_blank" rel="noreferrer" title="Links to: Sophie's LinkedIn profile">👋 Say hello</a></div>
+        </div>
+      </div>
+    </nav>
+    <main id="main-content">
+      <div class="grid-container">
+        <div class="span-12">
+          <h1>A simple, responsive grid system using CSS Grid and Scss</h1>
+          <p><strong>~</strong> CSS Grid • Scss • HTML<strong>~</strong></p>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="span-12">
+          <p class="project-intro">Using CSS Grid properties and Scss features, I developed a simple, responsive grid system that can be easily integrated into projects. ​​​​​​​It allows you to define column spans and offsets as well as text alignments using breakpoints.</p>
+          <figure><img src="/resources/images/case-studies/css-grid/grid-1.png" alt="CSS Grid columns, highlighting the grid area."></figure>
+        </div>
+        <div class="span-12">
+          <p>
+             The first iteration of my CSS Grid was simple and focused on the ability to specify the number of columns a column would span. However, as I began considering how others might utilise the grid, I expanded its functionality by incorporating the ability to offset columns, thereby creating further flexibility when creating layouts. </p>
+          <p>To increase flexibility further, I implemented the ability define various column spans and offsets according to specified breakpoints, as well as text alignments. </p>
+          <p>
+             Using Scss, I utilised features such as defining variables and mixins, nesting selectors, performing calculations, and applying flow control rules. All of this helped in reducing duplication in my code, making it quicker and easier to maintain and for others to adopt.</p>
+          <figure><img src="/resources/images/case-studies/css-grid/grid-2.png" alt="CSS Grid column spans and offsets defined using breakpoints."></figure>
+          <p>
+             Variables are used to specify the number of grid columns, the gap between the columns and the breakpoints. This speeds up development, as you only need to amend the variable value rather than manually finding and replacing every instance of that value in your code.</p>
+          <div class="codeBlock"><code>// CSS Grid</code><code>$grid-columns: 12;</code><code>$gap: 10px;</code><br><code>// - Breakpoints</code><code>$breakpoints: (</code><code>&nbsp;sm: 576px,</code><code>&nbsp;md: 768px,</code><code>&nbsp;lg: 992px,</code><code>&nbsp;xl: 1200px</code><code>);</code></div>
+          <p>
+             Before defining the columns, the setup of the grid itself was necessary. To enhance versatility of the grid, I created two containers with the latter defining a max-width:</p>
+          <ul> 
+            <li>
+               grid-container-fluid</li>
+            <li>
+               grid-container</li>
+          </ul>
+          <p>
+             The container sets both the number of columns and the gap between them. Both of these values are defined in the variables.scss file.</p>
+          <p>
+             grid-template-columns is used to define the number and size of the columns. 1fr is a CSS unit representing a fraction of the space in the grid container. Using repeat, I set each column to be an equal fraction which is repeated by the number defined in the $grid-columns variable. </p>
+          <div class="codeBlock"> <code>.grid-container-fluid, .grid-container {</code><code>&nbsp;display: grid;</code><code>&nbsp;grid-template-columns: repeat($grid-columns, 1fr);</code><code>&nbsp;gap: $gap;</code><code>&nbsp;padding: 10px 20px;</code><code>}</code><code>.grid-container {</code><code>&nbsp;max-width: 1360px;</code><code>&nbsp;margin: 0 auto;</code><code>}</code></div>
+          <p>
+             The @for loop, which is a Scss control rule, iterated through my column spans and offsets to define their position on the grid. The @for loop counts from the specified number up to the value set in the $grid-columns variable, thereby establishing the span or offset number. To simplify the calculation of offsets and to ensure they begin in the correct position, +1 was needed. </p>
+          <div class="codeBlock"> <code>@for $span from 1 through $grid-columns {</code><code>&nbsp;.span- {</code><code>&nbsp;&nbsp;grid-column-end: span $span;</code><code>&nbsp;}</code><code>}</code><code>@for $offset from 0 through $grid-columns {</code><code>&nbsp;.offset- {</code><code>&nbsp;&nbsp;grid-column-start: $offset + 1;</code><code>&nbsp;} </code><code>}</code></div>
+          <p>
+             To increase flexibility, I coded the ability the define different column spans and offsets based on breakpoints. I utilised @for loops within media queries to implemented this functionality. These operate similarly to the previous @for loops. The media queries are used to establish the breakpoint values whilst also generating the breakpoint class names. The loop then iterates through the spans and offsets to set the grid-column-end and grid-column-start value for each breakpoint. </p>
+          <div class="codeBlock"><code>@media (max-width: map-get($breakpoints, xl)) {<code>&nbsp;@for $span from 1 through $grid-columns {<code>&nbsp;&nbsp;.xl-span- {<code>&nbsp;&nbsp;&nbsp;grid-column-end: span $span;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code><code>&nbsp;@for $offset from 0 through $grid-columns {<code>&nbsp;&nbsp;.xl-offset- {<code>&nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code></code><code>}</code><code>@media (max-width: map-get($breakpoints, lg)) {<code>&nbsp;@for $span from 1 through $grid-columns {<code>&nbsp;&nbsp;.lg-span- {<code>&nbsp;&nbsp;&nbsp;grid-column-end: span $span;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code><code>&nbsp;@for $offset from 0 through $grid-columns {<code>&nbsp;&nbsp;.lg-offset- {<code>&nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code></code><code>}</code><code>@media (max-width: map-get($breakpoints, md)) {<code>&nbsp;@for $span from 1 through $grid-columns {<code>&nbsp;&nbsp;.md-span- {<code>&nbsp;&nbsp;&nbsp;grid-column-end: span $span;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code><code>&nbsp;@for $offset from 0 through $grid-columns {<code>&nbsp;&nbsp;.md-offset- {<code>&nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code></code><code>}</code><code>@media (max-width: map-get($breakpoints, sm)) {<code>&nbsp;@for $span from 1 through $grid-columns {<code>&nbsp;&nbsp;.sm-span- {<code>&nbsp;&nbsp;&nbsp;grid-column-end: span $span;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code><code>&nbsp;@for $offset from 0 through $grid-columns {<code>&nbsp;&nbsp;.sm-offset- {<code>&nbsp;&nbsp;&nbsp;grid-column-start: $offset + 1;</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code></code><code>}</code></div>
+          <p>
+             To ensure the columns are optimised for mobile devices, I added a custom media query that sets the columns to be span-12 with a starting column of 1 at 380px.</p>
+          <div class="codeBlock"><code>@media (max-width: 380px) {<code>&nbsp;[class*="span-"] {<code>&nbsp;&nbsp;grid-column-end: span 12;</code></code><code>&nbsp;} </code><code>&nbsp;[class*="offset-"] {<code>&nbsp;&nbsp;grid-column-start: 1;</code></code><code>&nbsp;}</code></code><code>}</code></div>
+          <p>
+             The final addition I implemented was adding the ability to set text alignments based on the defined breakpoints. This was accomplished through the use of a @mixin which contained a @each control rule. </p>
+          <p>
+             The @mixin uses the parameters set and iterates over each breakpoint defined in the varaibles.scss file. These breakpoints establish the max-width in media queries. Within each media query, it generates the class names based on the parameters. </p>
+          <div class="codeBlock"><code>@mixin text-alignment($prefix, $breakpoints) {<code>&nbsp;.align-left { text-align: left; }</code><code>&nbsp;.align-right { text-align: right; }</code><code>&nbsp;.align-center { text-align: center; }</code><br><code>&nbsp;@each $breakpoint, $value in $breakpoints {<code>&nbsp;&nbsp;@media (max-width: map-get($breakpoints,        $breakpoint)) {<code>&nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-left { text-align: left; }</code><code>&nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-right { text-align: right; }</code><code>&nbsp;&nbsp;&nbsp;.&#35;{$breakpoint}-&#35;{$prefix}-center { text-align: center; }</code></code><code>&nbsp;&nbsp;}</code></code><code>&nbsp;}</code></code><code>}</code></div>
+          <p>
+             Using a @mixin prevents repetition as when you include the mixin the $prefix is defined. This is achieved with the following Scss code:</p>
+          <p><code>@include text-alignment('align', $breakpoints);</code></p>
+          <p>
+             The $value variable isn't directly utilised within this loop but is included to fulfill the syntax requirements of the @each directive, which expects two variables.</p>
+          <figure><img src="/resources/images/case-studies/css-grid/grid-3.png" alt="CSS Grid columns showing spanning and offsets."></figure>
+          <p>
+             In summary, the grid system provides:</p>
+          <ul> 
+            <li>the flexibility to adjust the number of columns in the grid (by default this is set to 12 through the $grid-columns variable).</li>
+            <li>
+               the ability to specify the number of columns a column will span and to set offsets on columns. These can be configured for each breakpoint (xl, lg, md, sm).</li>
+            <li>
+               the flexibility to modify the breakpoints by adjusting the widths inside the variables.scss file. </li>
+            <li>
+               the ability to set text alignments based on breakpoints for left, right and center text alignments.</li>
+          </ul>
+          <p>
+             Take a look at my code, and feel free to use and adapt it in your next project!</p><a href="https://codepen.io/fromsophie/pen/rNbbPWR" target="_blank" rel="noreferrer" title="Links to: Sophie's Codepen of her CSS Grid project">📝 Edit on Codepen</a><br><a href="https://github.com/sophie-thomas/CSS-Grid" target="_blank" rel="noreferrer" title="Links to: Sophie's CSS-Grid Github repository">👩‍💻 Download my CSS-Grid repository on Github</a>
+        </div>
+        <div class="span-12"> 
+          <h2>Previous versions</h2>
+          <ul> 
+            <li>
+               CSS Grid: V1 — Column spans and offsets are adjusted automatically for smaller screens using @media queries at defined breakpoints rather than being able to manually define them. <br><a href="https://codepen.io/fromsophie/pen/BaEvxyZ" target="_blank" rel="noreferrer" title="Links to: Sophie's Codepen of her 1st verison of the CSS Grid project">📝 Edit CSS Grid: V1 on Codepen</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!-- Default Footer-->
+    <footer>
+      <div class="grid-container">
+        <div class="span-12">
+          <hr>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="span-6 md-span-12">
+          <p><a href="../index.html">Return to home page</a> &bull; <a href="../accessibility.html">Accessibility statement</a></p>
+        </div>
+        <div class="span-6 md-span-12 align-right md-align-left">
+          <p>&copy; Copyright
+            <script>document.write(new Date().getFullYear())</script> Sophie Thomas
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- JavaScript Scripts-->
+  <script type="text/javascript" src="/resources/js/base.js"></script>
+</html>
