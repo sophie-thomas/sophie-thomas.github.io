@@ -34,9 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const path = window.location.pathname.split('/').pop();
   const navItems = document.querySelectorAll('.dropdown-content a');
 
-  // Loop through each nav item and checks if the link matches the current path
+  // Loops through each nav item and checks if the link matches the current path
   navItems.forEach(link => {
-    if (link.getAttribute('href').split('/').pop() === path) {
+    const linkPath = link.getAttribute('href').split('/').pop();
+    
+    // -- Adds .active if path is not empty and matches the link path
+    if (path && linkPath === path) {
       link.classList.add('active');
     }
   });
