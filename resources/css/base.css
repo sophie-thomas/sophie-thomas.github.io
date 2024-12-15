@@ -1,222 +1,6 @@
 /*--- Variables           -------*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /*--- Mixins           -------*/
-/*--- Base styles            -------*/
-html {
-  font-size: 62.5%;
-}
-
-body {
-  display: grid;
-  background-color: #fff;
-  color: #373839;
-  font-family: "Nunito", sans-serif;
-  font-size: 2rem;
-  line-height: 3rem;
-  word-spacing: 0.32rem;
-  margin: 0px;
-  word-wrap: break-word;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-strong {
-  font-weight: bold;
-}
-
-hr {
-  background-color: #373839;
-  border-radius: 10px;
-  border: 0;
-  margin: 0;
-  height: 12px;
-}
-
-/* Text Alignment */
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-
-@media (max-width: 576px) {
-  .sm-align-left {
-    text-align: left;
-  }
-
-  .sm-align-right {
-    text-align: right;
-  }
-
-  .sm-align-center {
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .md-align-left {
-    text-align: left;
-  }
-
-  .md-align-right {
-    text-align: right;
-  }
-
-  .md-align-center {
-    text-align: center;
-  }
-}
-@media (max-width: 992px) {
-  .lg-align-left {
-    text-align: left;
-  }
-
-  .lg-align-right {
-    text-align: right;
-  }
-
-  .lg-align-center {
-    text-align: center;
-  }
-}
-@media (max-width: 1200px) {
-  .xl-align-left {
-    text-align: left;
-  }
-
-  .xl-align-right {
-    text-align: right;
-  }
-
-  .xl-align-center {
-    text-align: center;
-  }
-}
-/* Skip link for accessibility */
-#skiptocontent {
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  top: -10px;
-}
-
-.skip-link {
-  left: -9999px;
-  padding: 8px;
-  position: absolute;
-}
-.skip-link:active, .skip-link:focus {
-  left: 16px;
-  top: 16px;
-  z-index: 9999;
-  background-color: #fff;
-  color: #373839;
-  border: 2px solid #373839;
-}
-
-/* Character styling */
-h1, h2, p {
-  margin: 0;
-}
-
-h1 {
-  font-size: 4.6rem;
-  line-height: 6.9rem;
-  word-spacing: 0.736rem;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 4rem;
-  line-height: 6rem;
-  word-spacing: 0.64rem;
-  margin: 20px 0 10px;
-}
-
-h3 {
-  font-size: 3.6rem;
-  line-height: 5.4rem;
-  word-spacing: 0.576rem;
-  margin: 10px 0;
-}
-
-h4 {
-  font-size: 3.4rem;
-  line-height: 5.1rem;
-  word-spacing: 0.544rem;
-  margin: 10px 0;
-}
-
-p {
-  margin-bottom: 2.5rem;
-}
-
-.smallText {
-  font-size: 1.8rem;
-  line-height: 2.7rem;
-  word-spacing: 0.288rem;
-}
-
-.codeBlock {
-  margin-bottom: 20px;
-}
-.codeBlock code {
-  display: block;
-}
-
-code {
-  font-size: 1.8rem;
-  line-height: 2.7rem;
-  word-spacing: 0.288rem;
-}
-
-/* Links */
-a {
-  color: #373839;
-  text-decoration: underline;
-}
-a:hover {
-  text-decoration: none;
-}
-a:focus {
-  background-color: #373839;
-  color: #fff;
-  padding: 5px;
-  border-radius: 10px;
-  outline: 0;
-}
-a:focus-visible {
-  outline: 0;
-}
-
-/* Buttons */
-button {
-  background: inherit;
-  font-family: "Nunito", sans-serif;
-  font-size: 2rem;
-  line-height: 3rem;
-  word-spacing: 0.32rem;
-  word-wrap: break-word;
-  border: 0;
-  outline: none;
-}
-button:hover, button:focus {
-  text-decoration: underline;
-}
-
-/* Projects */
-.project-intro {
-  font-size: 2.2rem;
-  line-height: 3.3rem;
-  word-spacing: 0.352rem;
-}
-
 /*--- CSS Grid           -------*/
 .grid-container-fluid, .grid-container {
   display: grid;
@@ -751,6 +535,222 @@ button:hover, button:focus {
     grid-column-start: 1;
   }
 }
+/*--- Base styles            -------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  background-color: #fff;
+  color: #373839;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.32rem;
+  margin: 0px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {
+  background-color: #373839;
+  border-radius: 10px;
+  border: 0;
+  margin: 0;
+  height: 12px;
+}
+
+/* Text Alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .sm-align-left {
+    text-align: left;
+  }
+
+  .sm-align-right {
+    text-align: right;
+  }
+
+  .sm-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .md-align-left {
+    text-align: left;
+  }
+
+  .md-align-right {
+    text-align: right;
+  }
+
+  .md-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .lg-align-left {
+    text-align: left;
+  }
+
+  .lg-align-right {
+    text-align: right;
+  }
+
+  .lg-align-center {
+    text-align: center;
+  }
+}
+@media (max-width: 1200px) {
+  .xl-align-left {
+    text-align: left;
+  }
+
+  .xl-align-right {
+    text-align: right;
+  }
+
+  .xl-align-center {
+    text-align: center;
+  }
+}
+/* Skip link for accessibility */
+#skiptocontent {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
+.skip-link {
+  left: -9999px;
+  padding: 8px;
+  position: absolute;
+}
+.skip-link:active, .skip-link:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+  background-color: #fff;
+  color: #373839;
+  border: 2px solid #373839;
+}
+
+/* Character styling */
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.6rem;
+  line-height: 6.9rem;
+  word-spacing: 0.736rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 6rem;
+  word-spacing: 0.64rem;
+  margin: 20px 0 10px;
+}
+
+h3 {
+  font-size: 3.6rem;
+  line-height: 5.4rem;
+  word-spacing: 0.576rem;
+  margin: 10px 0;
+}
+
+h4 {
+  font-size: 3.4rem;
+  line-height: 5.1rem;
+  word-spacing: 0.544rem;
+  margin: 10px 0;
+}
+
+p {
+  margin-bottom: 2.5rem;
+}
+
+.smallText {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  word-spacing: 0.288rem;
+}
+
+.codeBlock {
+  margin-bottom: 20px;
+}
+.codeBlock code {
+  display: block;
+}
+
+code {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  word-spacing: 0.288rem;
+}
+
+/* Links */
+a {
+  color: #373839;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  background-color: #373839;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  outline: 0;
+}
+a:focus-visible {
+  outline: 0;
+}
+
+/* Buttons */
+button {
+  background: inherit;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.32rem;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+}
+button:hover, button:focus {
+  text-decoration: underline;
+}
+
+/* Projects */
+.project-intro {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  word-spacing: 0.352rem;
+}
+
 /*--- Media            -------*/
 figure {
   border-radius: 10px;
