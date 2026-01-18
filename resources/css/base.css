@@ -824,6 +824,7 @@ nav .grid-container .nav-links a.active {
   }
   nav .nav-links a {
     display: block;
+    margin-right: 0 !important;
     margin: 10px 0;
     text-align: center;
   }
