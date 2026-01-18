@@ -1,0 +1,8 @@
+@use "global/global-dir" as *;
+
+/*--- Lists            -------*/
+li {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

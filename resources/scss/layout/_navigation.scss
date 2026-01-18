@@ -4,51 +4,98 @@
 nav {
   margin: 20px 0 40px;
 
-  /* Dropdown Toggle */
-  .dropdown-toggle {
-    cursor: pointer;
-    width: 100%;
-    background-color: $base-colour;
-    color: $secondary-text-color;
-    border-radius: 10px;
-    padding: 10px 20px;
-    text-align: left;
-  }
+  .grid-container {
+    align-items: center;
 
-  .dropdown-content {
-    a {
-      margin-right: 20px;
-    
-      &.active {
-        background-color: $base-colour;
-        color: $secondary-text-color;
-        padding: 5px;
-        border-radius: 10px;
+    /* Site Logo */
+    [class*=span-]:has(.site-logo) {
+      display: grid;
+
+      .site-logo {
+        img {
+          width: 40px;
+          padding: 5px 0;
+        }
+      }
+    }
+
+    /* Dropdown Toggle */
+    .dropdown-toggle {
+      width: 100%;
+      padding: 10px 20px;
+
+      .close-icon {
+        display: none;
+      }
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      a {
+        margin-right: 20px;
+      
+        &.active {
+          background-color: $base-colour;
+          color: $secondary-text-color;
+          padding: 5px;
+          border-radius: 10px;
+        }
       }
     }
   }
 }
   
 /*--- Navigation Media Queries            -------*/
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   nav {
+    margin: 20px 0;
+
     .grid-container {
       padding: 0 20px;
     }
 
     /* Dropdown Toggle */
-    .dropdown-content {
+    .dropdown-toggle {
+      &[aria-expanded=true] {
+        .toggle-icon {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    /* Navigation Links */
+    .align-right:has(.nav-links) {
+      text-align: left;
+    }
+
+    .nav-links {
       display: none;
-      padding: 10px 0 0 10px;
 
       a {
-        padding: 10px 0;
+        display: block;
+        margin: 10px 0;
+        text-align: center;
       }
     }
   }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (max-width: 380px) {
+  nav {
+    /* Overrides Grid Columns */
+    &:has(.dropdown-toggle) {
+      [class*=span-]:has(.site-logo) {
+        grid-column-end: span 1;
+      }
+
+      [class*=span-]:has(.nav-links) {
+        grid-column-end: span 11;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
   nav {
     /* Hides dropdown button on larger screens */
     .dropdown-toggle {

@@ -2,6 +2,7 @@
 
 /*--- Mixins           -------*/
 
+/* Character styling */
 @mixin heading-1 {
   font-size: $heading-1-size;
   line-height: #{$heading-1-size * $line-height};
@@ -42,6 +43,8 @@
   line-height: #{$caption-size * $line-height};
   word-spacing: #{$caption-size * $word-spacing};
 }
+
+/* Text Alignment */
 @mixin text-alignment($prefix, $breakpoints) {
   .align-left { text-align: left; }
   .align-right { text-align: right; }
@@ -53,5 +56,24 @@
       .#{$breakpoint}-#{$prefix}-right { text-align: right; }
       .#{$breakpoint}-#{$prefix}-center { text-align: center; }
     }
+  }
+}
+
+/* Buttons */
+@mixin btn {
+  cursor: pointer;
+  background-color: $base-colour;
+  color: $secondary-text-color;
+  font-family: $primary-font;
+  @include paragraph;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+
+  &:hover, &:focus {
+    text-decoration: underline;
   }
 }

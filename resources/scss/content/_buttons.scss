@@ -1,0 +1,6 @@
+@use "global/global-dir" as *;
+
+/*--- Buttons            -------*/
+button {
+  @include btn;
+}

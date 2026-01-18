@@ -1,0 +1,20 @@
+@use "global/global-dir" as *;
+
+/*--- Testimonial            -------*/
+.testimonial {
+  background-color: $secondary-background-color;
+  @include small-text;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .author {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}

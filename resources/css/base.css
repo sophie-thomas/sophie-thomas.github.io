@@ -1,6 +1,9 @@
 /*--- Variables           -------*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /*--- Mixins           -------*/
+/* Character styling */
+/* Text Alignment */
+/* Buttons */
 /*--- CSS Grid           -------*/
 .grid-container-fluid, .grid-container {
   display: grid;
@@ -710,48 +713,8 @@ code {
   word-spacing: 0.288rem;
 }
 
-/* Links */
-a {
-  color: #373839;
-  text-decoration: underline;
-}
-a:hover {
-  text-decoration: none;
-}
-a:focus {
-  background-color: #373839;
-  color: #fff;
-  padding: 5px;
-  border-radius: 10px;
-  outline: 0;
-}
-a:focus-visible {
-  outline: 0;
-}
-
-/* Buttons */
-button {
-  background: inherit;
-  font-family: "Nunito", sans-serif;
-  font-size: 2rem;
-  line-height: 3rem;
-  word-spacing: 0.32rem;
-  word-wrap: break-word;
-  border: 0;
-  outline: none;
-}
-button:hover, button:focus {
-  text-decoration: underline;
-}
-
-/* Projects */
-.project-intro {
-  font-size: 2.2rem;
-  line-height: 3.3rem;
-  word-spacing: 0.352rem;
-}
-
 /*--- Media            -------*/
+/* Images */
 figure {
   border-radius: 10px;
   box-shadow: 10px 10px #373839;
@@ -785,8 +748,10 @@ figure figcaption {
 }
 .media-height-match figure img.contain {
   object-fit: contain;
+  object-position: bottom;
 }
 
+/* Videos */
 .video-embed {
   width: 100%;
 }
@@ -799,6 +764,7 @@ figure figcaption {
   margin-bottom: 2.5rem;
 }
 
+/* iframe */
 iframe {
   width: 100%;
 }
@@ -806,21 +772,31 @@ iframe {
 /*--- Navigation            -------*/
 nav {
   margin: 20px 0 40px;
+}
+nav .grid-container {
+  align-items: center;
+  /* Site Logo */
   /* Dropdown Toggle */
+  /* Navigation Links */
 }
-nav .dropdown-toggle {
-  cursor: pointer;
+nav .grid-container [class*=span-]:has(.site-logo) {
+  display: grid;
+}
+nav .grid-container [class*=span-]:has(.site-logo) .site-logo img {
+  width: 40px;
+  padding: 5px 0;
+}
+nav .grid-container .dropdown-toggle {
   width: 100%;
-  background-color: #373839;
-  color: #fff;
-  border-radius: 10px;
   padding: 10px 20px;
-  text-align: left;
 }
-nav .dropdown-content a {
+nav .grid-container .dropdown-toggle .close-icon {
+  display: none;
+}
+nav .grid-container .nav-links a {
   margin-right: 20px;
 }
-nav .dropdown-content a.active {
+nav .grid-container .nav-links a.active {
   background-color: #373839;
   color: #fff;
   padding: 5px;
@@ -828,22 +804,42 @@ nav .dropdown-content a.active {
 }
 
 /*--- Navigation Media Queries            -------*/
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   nav {
+    margin: 20px 0;
     /* Dropdown Toggle */
+    /* Navigation Links */
   }
   nav .grid-container {
     padding: 0 20px;
   }
-  nav .dropdown-content {
-    display: none;
-    padding: 10px 0 0 10px;
+  nav .dropdown-toggle[aria-expanded=true] .toggle-icon {
+    font-size: 1.5rem;
   }
-  nav .dropdown-content a {
-    padding: 10px 0;
+  nav .align-right:has(.nav-links) {
+    text-align: left;
+  }
+  nav .nav-links {
+    display: none;
+  }
+  nav .nav-links a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
   }
 }
-@media screen and (min-width: 991px) {
+@media screen and (max-width: 380px) {
+  nav {
+    /* Overrides Grid Columns */
+  }
+  nav:has(.dropdown-toggle) [class*=span-]:has(.site-logo) {
+    grid-column-end: span 1;
+  }
+  nav:has(.dropdown-toggle) [class*=span-]:has(.nav-links) {
+    grid-column-end: span 11;
+  }
+}
+@media screen and (min-width: 767px) {
   nav {
     /* Hides dropdown button on larger screens */
   }
@@ -851,6 +847,89 @@ nav .dropdown-content a.active {
     display: none;
   }
 }
+/*--- Links            -------*/
+a {
+  color: #373839;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  background-color: #373839;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  outline: 0;
+}
+a:focus-visible {
+  outline: 0;
+}
+a:has(img) {
+  display: inline-grid;
+}
+a:has(img):hover, a:has(img):focus {
+  background: transparent;
+  padding: 0;
+}
+a:has(img):hover img, a:has(img):focus img {
+  outline: 3px solid #373839;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+
+/*--- Buttons            -------*/
+button {
+  cursor: pointer;
+  background-color: #373839;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.32rem;
+  word-wrap: break-word;
+  border: 0;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+button:hover, button:focus {
+  text-decoration: underline;
+}
+
+/*--- Lists            -------*/
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/*--- Projects            -------*/
+.project-intro {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  word-spacing: 0.352rem;
+}
+
+/*--- Testimonial            -------*/
+.testimonial {
+  background-color: #f5f5f5;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  word-spacing: 0.288rem;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+}
+.testimonial:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.testimonial .author {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/*--- Content            -------*/
 /*--- Footer           -------*/
 footer {
   margin-top: 40px;
@@ -865,3 +944,4 @@ footer {
     margin-bottom: 10px;
   }
 }
+/*--- Base            -------*/

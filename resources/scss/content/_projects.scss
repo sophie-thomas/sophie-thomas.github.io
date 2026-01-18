@@ -1,0 +1,6 @@
+@use "global/global-dir" as *;
+
+/*--- Projects            -------*/
+.project-intro {
+  @include large-text;
+}

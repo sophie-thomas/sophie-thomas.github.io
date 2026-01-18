@@ -13,16 +13,16 @@ html(lang="en")
     main#main-content
       .grid-container
         .span-12
-          h1 A simple, responsive grid system using CSS Grid and Scss
+          h1 A simple, responsive grid system using CSS Grid and SCSS
           p
             strong ~
-            |  CSS Grid • Scss • HTML
+            |  CSS Grid • SCSS • HTML
             strong ~
 
       .grid-container
         .span-12
           p.project-intro
-            | Using CSS Grid properties and Scss features, I developed a simple, responsive grid system that can be easily integrated into projects. ​​​​​​​It allows you to define column spans and offsets as well as text alignments using breakpoints.
+            | Using CSS Grid properties and SCSS features, I developed a simple, responsive grid system that can be easily integrated into projects. ​​​​​​​It allows you to define column spans and offsets as well as text alignments using breakpoints.
 
           figure
             img(src="/resources/images/case-studies/css-grid/grid-1.png" alt="CSS Grid columns, highlighting the grid area.")
@@ -34,7 +34,7 @@ html(lang="en")
             | To increase flexibility further, I implemented the ability define various column spans and offsets according to specified breakpoints, as well as text alignments. 
 
           p 
-            | Using Scss, I utilised features such as defining variables and mixins, nesting selectors, performing calculations, and applying flow control rules. All of this helped in reducing duplication in my code, making it quicker and easier to maintain and for others to adopt.
+            | Using SCSS, I utilised features such as defining variables and mixins, nesting selectors, performing calculations, and applying flow control rules. All of this helped in reducing duplication in my code, making it quicker and easier to maintain and for others to adopt.
 
           figure
             img(src="/resources/images/case-studies/css-grid/grid-2.png" alt="CSS Grid column spans and offsets defined using breakpoints.")
@@ -82,7 +82,7 @@ html(lang="en")
             code }
           
           p 
-            | The @for loop, which is a Scss control rule, iterated through my column spans and offsets to define their position on the grid. The @for loop counts from the specified number up to the value set in the $grid-columns variable, thereby establishing the span or offset number. To simplify the calculation of offsets and to ensure they begin in the correct position, +1 was needed. 
+            | The @for loop, which is a SCSS control rule, iterated through my column spans and offsets to define their position on the grid. The @for loop counts from the specified number up to the value set in the $grid-columns variable, thereby establishing the span or offset number. To simplify the calculation of offsets and to ensure they begin in the correct position, +1 was needed. 
           
           .codeBlock 
             code @for $span from 1 through $grid-columns {
@@ -184,7 +184,7 @@ html(lang="en")
             code }
           
           p 
-            | Using a @mixin prevents repetition as when you include the mixin the $prefix is defined. This is achieved with the following Scss code:
+            | Using a @mixin prevents repetition as when you include the mixin the $prefix is defined. This is achieved with the following SCSS code:
           
           p
             code @include text-alignment('align', $breakpoints);

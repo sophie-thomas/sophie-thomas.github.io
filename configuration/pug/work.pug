@@ -13,22 +13,19 @@ html(lang="en")
     main#main-content
       .grid-container
         .span-12
-          h1 Project case studies
-
-          p
-            | I love collaborating with customers and key stakeholders to design and develop user-friendly websites. Read about the projects I have been involved in:
+          h1 Projects
       
       .grid-container
         .span-6.lg-span-12
+          p
+            | Take a look at some of my freelance project case studies:
           ul
             li 
-              a(href="/case-studies/chft-charity.html" title="Links to: CHFT Charity case study") Development of CHFT's Charity website using TYPO3
+              a(href="/case-studies/huddersfield-mens-voices.html" title="Links to: Huddersfield Men's Voices case study") Developing a user-friendly website for a Huddersfield Choir
             li 
-              a(href="/case-studies/css-grid.html" title="Links to: CSS Grid case study") A simple, responsive grid system using CSS Grid and Scss
-            li 
+              a(href="/case-studies/css-grid.html" title="Links to: CSS Grid case study") A simple, responsive grid system using CSS Grid and SCSS
+            li
               a(href="/case-studies/kidcrowd.html" title="Links to: kidcrowd case study") Designing kidcrowd, a gift-giving website
-            li 
-              a(href="/case-studies/shout-associates.html" title="Links to: SHOUT Associates case study") SHOUT Associates
             li
               a(href="/case-studies/nhs-accessible-colours.html" title="Links to: NHS Accessible Colours case study") NHS Accessible Colours
 
@@ -36,6 +33,14 @@ html(lang="en")
         .span-5.offset-7.lg-span-12.lg-offset-0
           figure
             img(src="/resources/images/sophie-working.jpg" alt="Sophie working at her computer.")
+
+      .grid-container
+        .span-12
+          h2 What people have said
+          p 
+            | I've worked on a variety of projects over the years with some wonderful customers. Here's what they've said about working with me.
+
+          include includes/testimonials.pug
 
     include includes/footer/footer-default.pug
 

@@ -2,6 +2,7 @@
 
 /*--- Media            -------*/
 
+/* Images */
 figure {
   border-radius: 10px;
   box-shadow: 10px 10px $border-color;
@@ -35,11 +36,13 @@ figure {
     
       &.contain {
         object-fit: contain;
+        object-position: bottom;
       }
     }
   }
 }
 
+/* Videos */
 .video-embed {
   width: 100%;
 
@@ -53,6 +56,7 @@ figure {
   }
 }
 
+/* iframe */
 iframe {
   width: 100%;
 }

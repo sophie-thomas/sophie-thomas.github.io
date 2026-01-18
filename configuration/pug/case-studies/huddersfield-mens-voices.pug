@@ -1,0 +1,195 @@
+doctype html
+html(lang="en")
+
+  head
+    title Huddersfield Men's Voices: The Portfolio of Sophie
+    include ../includes/head.pug
+
+  body 
+    include ../includes/skip-link.pug
+
+    include ../includes/navigation.pug
+
+    main#main-content
+      .grid-container
+        .span-12
+          h1 Developing a user-friendly website for a Huddersfield Choir
+          p
+            strong ~
+            |  Web Design and Development • TYPO3 CMS • Fluid Templating • HTML • SCSS • JavaScript 
+            strong ~
+
+      .grid-container
+        .span-12
+          p.project-intro
+            | Gledholt Male Voice Choir had a digital presence that was tangled with multiple sites built on drag and drop platforms such a Wix and WordPress, causing confusion and inconsistencies in the choir's visual identity.
+
+          p.project-intro
+            | I designed and developed a single, user-friendly website to replace these, meeting the 2 main goals set out by Dave, the lead committee member on this project:
+          
+          ol.project-intro
+            li Provide clear information for existing Choir members and supporters, including upcoming events and recordings.
+            li Promote the Choir to attract new members.
+
+          p.project-intro
+            | With the age demographic of those using this website and accessing the members area, designing the website to be intuitive and easy to navigate whilst also feeling modern was key to the success of this project. 
+
+          p.project-intro
+            | Towards the end of the project, the Choir decided that, in order to move forward and appeal to future generations, it was the ideal time to change their name alongside the launch of their new website. Gledholt Male Voice Choir become Huddersfield Men's Voices and this website gave them a modern, easy to use platform to start their new journey with. 
+
+          figure
+            img(src="/resources/images/case-studies/hdmv/banner.jpg" alt="Huddersfield Men's Voices")
+
+      .grid-container
+        .span-12
+          p 
+            | The launch of a product is always exciting, but let's rewind and start at the beginning of the process. The project started with a detailed proposal outlining what could be achieved based on the Choir's brief. The proposal included a breakdown of key features and an initial design concept that demonstrated the visual direction, incorporating the Choir's existing brand colours.
+
+          figure
+            img(src="/resources/images/case-studies/hdmv/gmvc-mockup.png" alt="Home page mockup for Gledholt Male Voice Choir")
+
+          p 
+            | Following approval from the Choir Committee, I set up a TYPO3 version 12 installation. Development was carried out locally using Docker and DDEV before being committed to GitHub for version control and streamlined deployment to the live server. The SQL database was managed through phpMyAdmin.
+
+          p 
+            | The sitepackage was built primarily using TypoScript, TsConfig and HTML. Scss (CSS) and JavaScript were used to provide styling and additional functionality. TYPO3's Fluid Template Engine was used throughout, enabling dynamic content rendering directly from the CMS. To keep the website lightweight and easy to maintain, I deliberately avoided large frameworks, instead opting to use my own 
+            a(href="css-grid.html" title="Links to: CSS Grid case study") CSS Grid System 
+            | built with SCSS and JavaScript.
+
+          p
+            | The core structure of the website was developed over 3 evenings, using Fluid Templating and TsConfig to define layouts and render content. From there, I refined the finer details, configuring features to ensure they were appropriate for the Choir's needs. The core functionality included:
+
+          ul 
+            li Custom containers for 2, 3, 4 column grids
+            li A-Z navigation with category filtering
+            li Events
+            li Image gallery
+            li News with category filtering
+            li Site-wide search across pages and new articles
+            li Members area protected by a login with the ability to request access and manage users
+
+          p 
+            | Using TYPO3's Container Elements extension, I coded custom containers to give the Choir flexible layout options for each page. Content Defender was used to enable additional functionality to the containers as well as the core backend layouts by defining allowed and disallowed content types, as well as setting limits such as maxItems. These containers can be selected inside TYPO3's backend.
+
+          p 
+            | Further flexibility in the styling of the content elements was provided through the use of Frames and RTE (Rich Text Editor) Styles.
+
+          p 
+            | I created a custom Default.yaml file within the sitepackage's RTE configuration, which was referenced via PageTS. This introduced additional styled elements that editors could select when creating content. SCSS was then used to target these styles, ensuring visual consistency across the site.
+
+          p 
+            | A custom Frame was also created, allowing specific HTML tags to wrap content elements. This enabled more targeted styling and behaviour using SCSS and JavaScript.
+
+          p 
+            | In addition, I developed a bespoke content element called Toggled Content using TYPO3's TCA configuration in PHP. This element was added to the Content Element Wizard via TSConfig, allowing editors to easily include it on their pages. It enables content to be hidden behind a toggle, ideal for information that not all users need to see at first glance.
+
+      .grid-container.media-height-match
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/hdmv/typo3-new-content-toggled-content.png" alt="Screenshot of TYPO3's New Content Wizard showing Toggled Content")
+
+        .span-6.md-span-12
+          figure
+            img(src="/resources/images/case-studies/hdmv/typo3-toggled-content.png" alt="Screenshot of the fields editors fill out when creating a Toggled Content element")
+
+      .grid-container
+        .span-12
+          p 
+            | Several third-party TYPO3 extensions were used to provide functionality such as search and news. These were customised through the sitepackage to align with the website's design and requirements. TypoScript configuration files were included using @import, and root paths were set to override default HTML templates with custom Fluid views.
+
+          p 
+            | User-friendliness extends beyond design and navigation—it also includes the language used on the site. For example, with the Events, I adapted the the extension, events2, to adjust the output of the display times. The times were rendered in 12-hour format using am/pm rather than a 24-hour clock. Start times such as 15:00 were instead displayed as 3pm, making the information clearer and more approachable for users. I also added the correct suffix to the date.  This was achieved through TYPO3 Fluid utilising variables and if conditions.
+
+          code
+            | &lt;f:comment&gt;&lt;!-- DETERMINES THE SUFFIX --&gt;&lt;/f:comment&gt;
+            
+            br 
+            
+            | &lt;f:variable name="suffix"&gt;
+            
+            br
+
+            | &nbsp; &lt;f:if condition="{dayNumber} == 1 || {dayNumber} == 21 || {dayNumber} == 31"&gt;st&lt;/f:if&gt;
+
+            br
+
+            | &nbsp; &lt;f:if condition="{dayNumber} == 2 || {dayNumber} == 22"&gt;nd&lt;/f:if&gt;
+
+            br
+
+            | &nbsp; &lt;f:if condition="{dayNumber} == 3 || {dayNumber} == 23"&gt;rd&lt;/f:if&gt;
+
+            br
+
+            | &nbsp; &lt;f:if condition="{dayNumber} != 1 && {dayNumber} != 21 && {dayNumber} != 31 && {dayNumber} != 2 && {dayNumber} != 22 && {dayNumber} != 3 && {dayNumber} != 23"&gt;th&lt;/f:if&gt;
+            
+            br
+            
+            | &lt;/f:variable&gt;
+
+      .grid-container.media-height-match
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/hdmv/events-before.png" alt="Screenshot of an event rendered on the website before language overrides.")
+
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/hdmv/events-after.png" alt="Screenshot of an event rendered on the website after language overrides.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | The Choir also wanted a way to highlight achievements, event recaps, and other updates. I proposed the introduction of a dedicated News page. This included dynamic category filtering, allowing visitors to quickly find articles that interested them. [ADD IMAGE]
+
+      .grid-container.media-height-match
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/hdmv/news-list-view.jpg" alt="Screenshot of an event rendered on the website before language overrides.")
+
+        .span-6.md-span-12
+          figure
+            img.contain(src="/resources/images/case-studies/hdmv/news-detail-view.jpg" alt="Screenshot of an event rendered on the website after language overrides.")
+
+      .grid-container 
+        .span-12 
+          p 
+            | Towards the end of the project, the Choir decided that alongside launching the new website, it was the right moment to rebrand in order to appeal to future generations. Gledholt Male Voice Choir become Huddersfield Men's Voices. 
+
+          p 
+            | Read about 
+            a(href="https://huddersfieldhub.co.uk/why-gledholt-male-voice-choir-has-rebranded-to-become-huddersfield-mens-voices" target="_blank" rel="noreferrer" title="Links to: Andy Hirst's article on why Gledholt Male Voice Choir has rebranded to become Huddersfield Men’s Voices") why Gledholt Male Voice Choir has rebranded to become Huddersfield Men’s Voices
+            | .
+
+          p
+            | This rebrand came with a new visual identity that needed to be reflected across the website. Updates went beyond a simple colour change and included a restructured header and footer, updated messaging, and new imagery. I attended one of the Choir’s rehearsal sessions to photograph the group, with the aim of showcasing them as welcoming, friendly, and inclusive.
+
+          figure
+            img(src="/resources/images/case-studies/hdmv/home-page.jpg" alt="Screenshot of Huddersfield Men's Voices home page")
+
+          p 
+            | Prior to launch, I upgraded the website to TYPO3 version 13 to ensure it was up to date and compliant. Alongside the core upgrade, the codebase was refactored to improve performance and maintainability.
+            
+          p 
+            | As part of the hand-over process, I provided 1-to-1 training sessions covering day-to-day content management, alongside comprehensive user guides tailored to the Choir's needs.
+
+          p 
+            | Designing and developing this website has provided Huddersfield Men's Voices with a modern, user-friendly website to support their continued growth, promoting male voice singing in Huddersfield while giving existing members a single, accessible place to find everything they need.
+
+      .grid-container
+        .span-12
+          p 
+            strong  
+              | 🗣️ Testimonial from Dave Barnett: 
+            br
+            | "I asked Sophie to create a modern and workable website for a male voice choir during a rebranding phase. Sophie took account of the brief, which was to create a modern, impactful public facing site which dovetailed well with the promotional aspect we wanted, but more importantly worked with me to create a site with a members' area which helps to run the events, rehearsals and social life of the choir. She took particular account of the need for a straightforward, uncomplicated navigation process for those members for whom IT can prove to be a bit of a challenge. She also took the time to add a personal touch by tutoring me in how to edit and update the site content, providing me with easy to follow user-guides on all the aspects of managing membership and content. Feedback from the choir, supporters and members has been particularly positive, and from a personal point of view I cannot thank her enough."
+
+          a(href="https://huddsmv.org.uk/" target="_blank" rel="noreferrer" title="Links to: Huddersfield Men's Voices website") 💻 View Huddersfield Men's Voices website
+
+      .grid-container 
+        .span-12 
+          p.smallText
+            | Content maintenance has since been passed over to Huddersfield Men's Voices. Editing advice and accessibility guidance is shared with the Choir regularly.
+
+    include ../includes/footer/footer-default.pug
+
+  include ../includes/scripts.pug

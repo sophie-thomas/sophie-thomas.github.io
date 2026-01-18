@@ -1,5 +1,4 @@
-// Globals
-@use "global/global-dir";
+/*--- Base            -------*/
 
 // Structure
 @use "structure/grid";
@@ -8,4 +7,5 @@
 
 // Layout
 @use "layout/navigation";
+@use "layout/content";
 @use "layout/footer";

@@ -11,33 +11,35 @@ html(lang="en")
     include includes/navigation.pug
 
     main#main-content
+
       .grid-container
         .span-12
-          h1 Hello, I'm Sophie Thomas
-      
+          h1 Hello, I'm Sophie
+          
       .grid-container
-        .span-12
+        .span-6.md-span-12
           p
             strong
-              | I love turning complex problems into simple, user-friendly and accessible websites, while collaborating closely with others to bring their ideas to the screen. When I'm not crafting websites, I'm usually off exploring waterfalls or out riding trails.
-
-      .grid-container
-        .span-6.lg-span-12
-          p
-            | With over 7 years of public-sector experience, I design and develop accessible, user-friendly, and reliable websites using TYPO3. I collaborate closely with customers to ensure their websites align with branding guidelines and project requirements. My passion and understanding for accessibility, particularly the Web Content Accessibility Guidelines, means that it is at the core of my decision-making to ensure everyone, regardless of ability, has the best possible experience when interacting with digital assets.
+              | I love turning complex problems into simple, user-friendly and accessible websites, while collaborating closely with others to bring their ideas to the screen. 
 
           p
-            | In my current role as Frontend lead, I ensure project delivery aligns with company strategy and team roadmaps, playing a key role in shaping the strategic direction of the service. I also mentor junior web developers, supporting their growth and ensuring continuous improvement within the team. I always strive to go above and beyond, delivering the level of service I would expect for myself.
-        
-        .span-5.offset-7.lg-span-12.lg-offset-0
-          figure
-            img(src="/resources/images/sophie-headshot.jpg" alt="Sophie smiling.")
+            | When I'm not crafting websites, I'm usually off 
+            a(
+              href="https://www.tiktok.com/@fromsophie" target="_blank" rel="noreferrer" title="Links to: fromsophie on TikTok"
+            ) exploring waterfalls
+            |  or out 
+            a(
+              href="https://www.youtube.com/@fromsophiecycles" target="_blank" rel="noreferrer" title="Links to: Sophie Cycles on YouTube"
+            ) riding mountain biking trails
+            | .
 
-      .grid-container
-        .span-12
           h2 My skills
           p
-            | TYPO3 Content Mangement System • Web Design / Development • Adobe Creative Suite • HTML • CSS (including Scss and Bootstrap Framework) • jQuery • Github • Web Content Accessibility Guidelines • Video Production • PRINCE2 Agile&reg; • Project Management
+            | TYPO3 • Fluid Templating • Web Design and Development • HTML • CSS (including SASS and SCSS) • Bootstrap • jQuery • Git • SQL • Digital Accessibility (WCAG) • Video Production • PRINCE2 Agile&reg; • Project Management • Mentoring
+        
+        .span-5.offset-7.md-span-12.md-offset-0
+          figure
+            img(src="/resources/images/sophie-headshot.jpg" alt="Sophie smiling.")
 
     include includes/footer/footer-index.pug
 

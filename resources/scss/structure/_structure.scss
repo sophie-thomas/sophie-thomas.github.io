@@ -38,7 +38,6 @@ hr {
   overflow: hidden;
   top: -10px;
 }
-
 .skip-link {
   left: -9999px;
   padding: 8px;
@@ -89,44 +88,4 @@ p {
 }
 code {
   @include small-text;
-}
-  
-/* Links */
-a {
-  color: $link-text-color;
-  text-decoration: underline;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:focus {
-    background-color: #373839;
-    color: #fff;
-    padding: 5px;
-    border-radius: 10px;
-    outline: 0;
-  }
-  &:focus-visible {
-    outline: 0;
-  }
-}
-  
-/* Buttons */
-button {
-  background: inherit;
-  font-family: $primary-font;
-  @include paragraph;
-  word-wrap: break-word;
-  border: 0;
-  outline: none;
-
-  &:hover, &:focus {
-    text-decoration: underline;
-  }
-}
-
-/* Projects */
-.project-intro {
-  @include large-text;
 }
